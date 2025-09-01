@@ -7,7 +7,7 @@ This Mintlify documentation site is configured to use Locadex for automated inte
 - **Working Directory**: `.`
 - **Branch Prefix**: `locadex/`
 - **Default Locale**: `en`
-- **Target Locales**: `en`, `ja`, `fr`
+- **Target Locales**: `en`, `fr`, `ja`
 - **Hide Default Locale**: Enabled
 - **Route Example**: `/docs`
 
