@@ -4,20 +4,20 @@ description: "Configura un proxy inverso personalizado para servir tu documentac
 ---
 
 <Note>
-  Las configuraciones de proxy inverso solo están disponibles en los [planes Custom](https://mintlify.com/pricing?ref=reverse-proxy).
+  Las configuraciones de proxy inverso solo están disponibles para los [planes Custom](https://mintlify.com/pricing?ref=reverse-proxy).
 </Note>
 
-Para servir tu documentación a través de un proxy inverso personalizado, debes configurar reglas de enrutamiento, políticas de caché y reenvío de encabezados.
+Para servir tu documentación a través de un proxy inverso personalizado, debes configurar reglas de enrutamiento, políticas de caché y reenvío de headers.
 
-Cuando implementes un proxy inverso, supervisa posibles problemas con la verificación del domain, el aprovisionamiento de certificados SSL, los flujos de Autenticación, el rendimiento y el seguimiento de Analytics.
+Cuando implementes un proxy inverso, supervisa posibles problemas con la verificación del domain, el aprovisionamiento de certificados SSL, los flujos de autenticación, el rendimiento y el seguimiento de Analíticas.
 
 <div id="routing-configuration">
   ## Configuración de enrutamiento
 </div>
 
-Encamina estas rutas a tu subdomain de Mintlify con las políticas de caché especificadas:
+Redirige mediante proxy estas rutas a tu Subdomain de Mintlify con las políticas de caché indicadas:
 
-| Ruta | Destino | Caché |
+| Path | Destination | Caching |
 |------|-------------|---------|
 | `/.well-known/acme-challenge/*` | `<your-subdomain>.mintlify.app` | Sin caché |
 | `/.well-known/vercel/*` | `<your-subdomain>.mintlify.app` | Sin caché |
@@ -27,19 +27,19 @@ Encamina estas rutas a tu subdomain de Mintlify con las políticas de caché esp
 | `/` | `<your-subdomain>.mintlify.app` | Sin caché |
 
 <div id="required-header-configuration">
-  ## Configuración obligatoria de encabezados
+  ## Configuración de headers requerida
 </div>
 
-Configura tu proxy inverso con estos requisitos de encabezados:
+Configura tu proxy inverso con estos requisitos de headers:
 
-- **Origin**: Contiene el subdomain de destino `<your-subdomain>.mintlify.app`
-- **X-Forwarded-For**: Conserva la información de la IP del cliente
+- **Origin**: Contiene el Subdomain de destino `<your-subdomain>.mintlify.app`
+- **X-Forwarded-For**: Conserva la IP del cliente
 - **X-Forwarded-Proto**: Conserva el protocolo original (HTTP/HTTPS)
-- **X-Real-IP**: Reenvía la dirección IP real del cliente
+- **X-Real-IP**: Reenvía la IP real del cliente
 - **User-Agent**: Reenvía el agente de usuario
 
 <Warning>
-  Asegúrate de no reenviar el encabezado `Host`
+  Asegúrate de no reenviar el Header `Host`
 </Warning>
 
 <div id="example-nginx-configuration">
@@ -133,27 +133,27 @@ server {
 
 
 <div id="troubleshooting">
-  ## Resolución de problemas
+  ## Solución de problemas
 </div>
 
 <div id="404-error">
   ### Error 404
 </div>
 
-**Síntomas**: La documentación carga, pero las funciones no se ejecutan. Las llamadas a la API fallan.
+**Síntomas**: La documentación carga, pero las funciones no funcionan. Las llamadas a la API fallan.
 
-**Causa**: Se está reenviando el encabezado `Host` o falta el encabezado `Origin`.
+**Causa**: Se está reenviando el Header `Host` o falta el Header `Origin`.
 
 **Solución**:
 
-- Elimina el reenvío del encabezado `Host`
-- Configura el encabezado `Origin` en `<your-subdomain>.mintlify.app`
+- Elimina el reenvío del Header `Host`
+- Establece el Header `Origin` en `<your-subdomain>.mintlify.app`
 
 <div id="performance-issues">
   ### Problemas de rendimiento
 </div>
 
-**Síntomas**: Cargas de página lentas y desplazamientos de diseño.
+**Síntomas**: Carga lenta de páginas y desplazamientos del diseño.
 
 **Causa**: Configuración de caché incorrecta.
 

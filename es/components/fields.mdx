@@ -1,18 +1,18 @@
 ---
 title: "Campos"
-description: "Configura los parámetros de tus referencias de API o SDK"
+description: "Configura parámetros para tus referencias de API o SDK"
 ---
 
-Usa campos para documentar los parámetros y las respuestas de la API. Hay dos tipos de campos: campos de parámetros y campos de respuesta.
+Utiliza campos para documentar parámetros y respuestas de la API. Hay dos tipos de campos: campos de parámetros y campos de respuesta.
 
 <div id="parameter-field">
-  ## Campo de parámetro
+  ## Campo de parámetros
 </div>
 
-El componente `<ParamField>` se utiliza para definir parámetros de tus API o SDK. Al agregar un `ParamField`, se añade automáticamente un [área de pruebas de la API](/es/api-playground/overview).
+El componente `<ParamField>` se usa para definir parámetros para tus API o SDK. Al agregar un `ParamField` se añade automáticamente un [API playground](/es/api-playground/overview).
 
 <ParamField path="param" type="string" required>
-  Un ejemplo de campo de parámetro
+  Un ejemplo de un campo de parámetros
 </ParamField>
 
 ```mdx
@@ -26,8 +26,7 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 </div>
 
 <ParamField body="query, path, body, or header" type="string">
-  Indica si el parámetro es de query, ruta, cuerpo o encabezado. Seguido del
-  nombre del parámetro.
+  Indica si el parámetro es de tipo query, path, body o Header. A continuación, el name del parámetro.
 </ParamField>
 
 <ParamField body="type" type="string">
@@ -35,11 +34,11 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 
   Admite `number`, `string`, `boolean`, `object`.
 
-  Los arreglos se pueden definir con el sufijo `[]`. Por ejemplo, `string[]`.
+  Los arrays pueden definirse con el sufijo `[]`. Por ejemplo, `string[]`.
 </ParamField>
 
 <ParamField body="required" type="boolean">
-  Indica si el parámetro es obligatorio.
+  Indica si el parámetro es Requerido.
 </ParamField>
 
 <ParamField body="deprecated" type="boolean">
@@ -47,11 +46,11 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 </ParamField>
 
 <ParamField body="default" type="any">
-  Valor predeterminado que se aplica cuando el valor de la solicitud está vacío.
+  Valor predeterminado que se usa cuando el valor de la solicitud está vacío.
 </ParamField>
 
 <ParamField body="placeholder" type="string">
-  Texto del marcador de posición para la entrada en el entorno de pruebas.
+  Texto del placeholder para el campo en el playground.
 </ParamField>
 
 <ParamField body="children" type="string">
@@ -79,7 +78,7 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 </div>
 
 <ResponseField name="name" type="string" required>
-  El nombre del valor de la respuesta.
+  El name del valor de la respuesta.
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
@@ -87,11 +86,11 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 </ResponseField>
 
 <ResponseField name="default" type="string">
-  Valor predeterminado.
+  El valor predeterminado.
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  Indica si la respuesta es obligatoria.
+  Indica si la respuesta es Requerido.
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
@@ -99,9 +98,9 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">
-  Etiquetas que se muestran antes del nombre del campo.
+  Etiquetas que se muestran antes del name del campo.
 </ResponseField>
 
 <ResponseField name="post" type="string[]">
-  Etiquetas que se muestran después del nombre del campo.
+  Etiquetas que se muestran después del name del campo.
 </ResponseField>

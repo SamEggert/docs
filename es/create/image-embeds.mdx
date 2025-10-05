@@ -1,25 +1,25 @@
 ---
-title: "Imágenes y contenido incrustado"
+title: "Imágenes e incrustaciones"
 description: "Agrega imágenes, videos e iframes"
 ---
 
 Agrega imágenes, inserta videos e incluye contenido interactivo con iframes en tu documentación.
 
 <Frame>
-  <img className="rounded-xl" src="https://mintlify-assets.b-cdn.net/bigbend.jpg" alt="Fotografía de un paisaje con flores moradas en primer plano, montañas al fondo y un cielo azul con nubes dispersas." />
+  <img className="rounded-xl" src="https://mintlify-assets.b-cdn.net/bigbend.jpg" alt="Fotografía de un paisaje pintoresco con flores moradas en primer plano, montañas al fondo y un cielo azul con nubes dispersas." />
 </Frame>
 
 <div id="images">
   ## Imágenes
 </div>
 
-Agrega imágenes para aportar contexto visual, ejemplos o elementos decorativos a tu documentación.
+Añade imágenes para aportar contexto visual, ejemplos o elementos decorativos a tu documentación.
 
 <div id="basic-image-syntax">
   ### Sintaxis básica de imágenes
 </div>
 
-Utiliza la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images) para añadir imágenes a tu documentación:
+Usa la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images) para añadir imágenes a tu documentación:
 
 ```mdx
 ![Texto alternativo que describe la imagen](/path/to/image.png)
@@ -29,13 +29,13 @@ Utiliza la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#im
   Incluye siempre texto alternativo descriptivo para mejorar la accesibilidad y el SEO. El texto alternativo debe describir claramente lo que muestra la imagen.
 </Tip>
 
-Los archivos de imagen deben pesar menos de 20 MB. Para archivos más grandes, alójalos en un servicio CDN como [Amazon S3](https://aws.amazon.com/s3) o [Cloudinary](https://cloudinary.com).
+Los archivos de imagen deben pesar menos de 20 MB. Para archivos más grandes, hospítalos en un servicio CDN como [Amazon S3](https://aws.amazon.com/s3) o [Cloudinary](https://cloudinary.com).
 
 <div id="html-image-embeds">
   ### Inserciones de imágenes en HTML
 </div>
 
-Para tener más control sobre la visualización de imágenes, usa etiquetas HTML `<img>`:
+Para tener más control sobre cómo se muestran las imágenes, usa etiquetas HTML `<img>`:
 
 ```html
 <img 
@@ -50,7 +50,7 @@ Para tener más control sobre la visualización de imágenes, usa etiquetas HTML
   #### Desactivar la función de zoom
 </div>
 
-Para desactivar el zoom predeterminado al hacer clic en las imágenes, agrega la propiedad `noZoom`:
+Para desactivar el zoom predeterminado al hacer clic en las imágenes, añade la propiedad `noZoom`:
 
 ```html highlight="4"
 <img 
@@ -62,10 +62,10 @@ Para desactivar el zoom predeterminado al hacer clic en las imágenes, agrega la
 ```
 
 <div id="link-images">
-  #### Enlazar imágenes
+  #### Vincular imágenes
 </div>
 
-Para convertir una imagen en un enlace clicable, envuélvela en una etiqueta de ancla y añade la propiedad `noZoom`:
+Para hacer que una imagen sea un enlace clicable, envuelve la imagen en una etiqueta de enlace y agrega la propiedad `noZoom`:
 
 ```html
 <a href="https://mintlify.com" target="_blank">
@@ -79,14 +79,14 @@ Para convertir una imagen en un enlace clicable, envuélvela en una etiqueta de 
 ```
 
 <Note>
-  Las imágenes dentro de etiquetas de anclaje muestran automáticamente un cursor de puntero para indicar que se puede hacer clic en ellas.
+  Las imágenes dentro de etiquetas de anclaje muestran automáticamente el cursor de puntero para indicar que son clicables.
 </Note>
 
 <div id="light-and-dark-mode-images">
-  #### Imágenes para los modos claro y oscuro
+  #### Imágenes para los modos light y oscuro
 </div>
 
-Para mostrar imágenes distintas en los temas claro y oscuro, usa clases de Tailwind CSS:
+Para mostrar imágenes distintas en temas light y oscuro, usa clases de Tailwind CSS:
 
 ```html
 <!-- Imagen en modo claro -->
@@ -115,10 +115,10 @@ Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic
 </Tip>
 
 <div id="youtube-embeds">
-  ### Inserciones de YouTube
+  ### Contenidos incrustados de YouTube
 </div>
 
-Inserta videos de YouTube usando elementos iframe:
+Incrusta videos de YouTube usando elementos iframe:
 
 ```html
 <iframe
@@ -132,14 +132,14 @@ Inserta videos de YouTube usando elementos iframe:
 ```
 
 <Frame>
-  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="Reproductor de vídeo de YouTube" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="Reproductor de video de YouTube" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
 </Frame>
 
 <div id="self-hosted-videos">
   ### Videos autoalojados
 </div>
 
-Usa el elemento HTML `<video>` para contenido de video autoalojado:
+Usa el elemento HTML `<video>` para contenido de vídeo autoalojado:
 
 ```html
 <video
@@ -150,10 +150,10 @@ Usa el elemento HTML `<video>` para contenido de video autoalojado:
 ```
 
 <div id="autoplay-videos">
-  ### Reproducción automática de vídeos
+  ### Reproducción automática de videos
 </div>
 
-Para reproducir un vídeo automáticamente, usa:
+Para reproducir un video de forma automática, usa:
 
 ```html
 <video
@@ -167,7 +167,7 @@ Para reproducir un vídeo automáticamente, usa:
 ```
 
 <Note>
-  Al usar la sintaxis de JSX, escribe los atributos de dos palabras en camelCase: `autoPlay`, `playsInline`, `allowFullScreen`.
+  Al usar la sintaxis de JSX, escribe los atributos compuestos en camelCase: `autoPlay`, `playsInline`, `allowFullScreen`.
 </Note>
 
 <div id="iframes">

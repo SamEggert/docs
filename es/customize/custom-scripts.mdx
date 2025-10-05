@@ -1,15 +1,15 @@
 ---
-title: "Scripts personalizados"
-description: "Personaliza por completo tu documentación con CSS y JS personalizados"
+title: "Custom scripts"
+description: "Personaliza completamente tu documentación con CSS y JS personalizados"
 ---
 
-Usa CSS para dar estilo a los elementos HTML o agrega CSS y JavaScript personalizados para ajustar por completo la apariencia y la experiencia de tu documentación.
+Usa CSS para estilizar los elementos HTML o agrega CSS y JavaScript personalizados para personalizar por completo el aspecto y la experiencia de tu documentación.
 
 <div id="styling-with-tailwind-css">
-  ## Estilizado con Tailwind CSS
+  ## Estilos con Tailwind CSS
 </div>
 
-Usa Tailwind CSS v3 para dar estilo a elementos HTML. Puedes controlar el diseño, el espaciado, los colores y otras propiedades visuales. Algunas clases comunes son:
+Usa Tailwind CSS v3 para dar estilo a los elementos HTML. Puedes controlar el layout, el espaciado, los colores y otras propiedades visuales. Algunas clases comunes son:
 
 * `w-full` - Ancho completo
 * `aspect-video` - Relación de aspecto 16:9
@@ -17,7 +17,7 @@ Usa Tailwind CSS v3 para dar estilo a elementos HTML. Puedes controlar el diseñ
 * `block`, `hidden` - Control de visualización
 * `dark:hidden`, `dark:block` - Visibilidad en modo oscuro
 
-Los valores arbitrarios de Tailwind CSS no están admitidos. Para valores personalizados, usa la prop `style`.
+Los valores arbitrarios de Tailwind CSS no están soportados. Para valores personalizados, usa la prop `style`.
 
 ```html
 <img style={{ width: '350px', margin: '12px auto' }} src="/path/image.jpg" />
@@ -28,13 +28,13 @@ Los valores arbitrarios de Tailwind CSS no están admitidos. Para valores person
   ## CSS personalizado
 </div>
 
-Agrega archivos CSS a tu repositorio y los nombres de clase definidos se aplicarán y estarán disponibles en todos tus archivos `MDX`.
+Agrega archivos CSS a tu Repositorio y los nombres de clase definidos se aplicarán y estarán disponibles en todos tus archivos `MDX`.
 
 <div id="adding-stylecss">
   ### Agregar `style.css`
 </div>
 
-Por ejemplo, puedes agregar el siguiente archivo `style.css` para personalizar el estilo de la barra de navegación y el pie de página.
+Por ejemplo, puedes agregar el siguiente archivo `style.css` para personalizar los estilos de la barra de navegación y el pie de página.
 
 ```css
 #navbar {
@@ -55,7 +55,7 @@ footer {
 Mintlify cuenta con un conjunto de identificadores y selectores comunes para ayudarte a etiquetar elementos importantes de la interfaz.
 
 <Tip>
-  Usa Inspeccionar elemento para encontrar referencias a los elementos que quieres personalizar.
+  Usa la herramienta Inspeccionar elemento para encontrar referencias a los elementos que deseas personalizar.
 </Tip>
 
 <AccordionGroup>
@@ -79,7 +79,7 @@ Mintlify cuenta con un conjunto de identificadores y selectores comunes para ayu
   - PageContextMenu: `page-context-menu`
   - PageContextMenuButton: `page-context-menu-button`
   - PageTitle: `page-title`
-  - Paginación: `pagination`
+  - Pagination: `pagination`
   - Panel: `panel`
   - RequestExample: `request-example`
   - ResponseExample: `response-example`
@@ -164,20 +164,20 @@ Mintlify cuenta con un conjunto de identificadores y selectores comunes para ayu
 </AccordionGroup>
 
 <Warning>
-  Las referencias y el estilo de los elementos comunes pueden cambiar a medida que la plataforma evoluciona. Utiliza estilos personalizados con precaución.
+  Las referencias y el estilo de los elementos comunes están sujetos a cambios a medida que la plataforma evoluciona. Utiliza estilos personalizados con precaución.
 </Warning>
 
 <div id="custom-javascript">
   ## JavaScript personalizado
 </div>
 
-El JavaScript personalizado te permite agregar código ejecutable a nivel global. Es equivalente a insertar una etiqueta `<script>` con código JS en cada página.
+El JavaScript personalizado te permite agregar código ejecutable a nivel global. Es equivalente a añadir una etiqueta `<script>` con código JavaScript en cada página.
 
 <div id="adding-custom-javascript">
   ### Agregar JavaScript personalizado
 </div>
 
-Cualquier archivo `.js` dentro del directorio de contenido de tu documentación se incluirá en cada página. Por ejemplo, puedes agregar el archivo `ga.js` siguiente para habilitar [Analytics](https://marketingplatform.google.com/about/analytics) de Google en toda la documentación.
+Cualquier archivo `.js` dentro del directorio de contenido de tu documentación se incluirá en cada página. Por ejemplo, puedes agregar el archivo `ga.js` siguiente para habilitar [Google Analytics](https://marketingplatform.google.com/about/analytics) en toda la documentación.
 
 ```js
 window.dataLayer = window.dataLayer || [];

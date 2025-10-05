@@ -3,25 +3,25 @@ title: 'Fragmentos reutilizables'
 description: 'Fragmentos personalizados reutilizables para mantener el contenido sincronizado'
 ---
 
-Uno de los principios fundamentales del desarrollo de software es DRY (Don&#39;t Repeat Yourself), que también aplica a la documentación. Si te encuentras repitiendo el mismo contenido en varios lugares, crea un fragmento personalizado para mantener tu contenido sincronizado.
+Uno de los principios fundamentales del desarrollo de software es DRY (Don’t Repeat Yourself), que también aplica a la documentación. Si te encuentras repitiendo el mismo contenido en varios lugares, crea un fragmento personalizado para mantener tu contenido sincronizado.
 
 <div id="creating-a-custom-snippet">
-  ## Creación de un fragmento personalizado
+  ## Crear un snippet personalizado
 </div>
 
-**Requisito previo**: Debes crear tu archivo de fragmento en el directorio `snippets` para que la importación funcione.
+**Requisito previo**: Debes crear el archivo del snippet en el directorio `snippets` para que la importación funcione.
 
-Cualquier página en el directorio `snippets` se tratará como un fragmento y no
-se renderizará como una página independiente. Si deseas crear una página independiente
-a partir del fragmento, importa el fragmento en otro archivo e invócalo como un
+Cualquier página en el directorio `snippets` se tratará como un snippet y no
+se renderizará como una página independiente. Si quieres crear una página independiente
+a partir del snippet, importa el snippet en otro archivo y úsalo como
 componente.
 
 <div id="default-export">
-  ### Exportación por defecto
+  ### Exportación predeterminada
 </div>
 
-1. Agrega contenido al archivo del fragmento que quieras reutilizar. Opcionalmente, puedes agregar variables que se puedan completar mediante props
-   cuando importes el fragmento. En este ejemplo, nuestra variable es word.
+1. Agrega contenido al archivo del snippet que quieras reutilizar. Opcionalmente, puedes agregar variables que se puedan completar mediante props
+   cuando importes el snippet. En este ejemplo, nuestra variable es word.
 
 ```typescript snippets/my-snippet.mdx
 ¡Hola mundo! Este es mi contenido que quiero reutilizar en todas las páginas. 
@@ -46,16 +46,16 @@ Lorem ipsum dolor sit amet.
 ```
 
 <div id="exporting-with-variables">
-  ### Exportación con variables
+  ### Exportar con variables
 </div>
 
-1. Opcionalmente, puedes añadir variables que se puedan completar mediante props cuando importes el fragmento. En este ejemplo, nuestra variable es word.
+1. De forma opcional, puedes añadir variables que se pueden completar mediante props al importar el snippet. En este ejemplo, nuestra variable es word.
 
 ```typescript snippets/my-snippet.mdx
-Mi palabra clave del día es {word}.
+Mi key del día es {word}.
 ```
 
-2. Importa el fragmento en tu archivo de destino con la variable. La propiedad se completará según tu configuración.
+2. Importa el fragmento en tu archivo de destino con la variable. La propiedad se completará según tu especificación.
 
 ```typescript destination-file.mdx
 ---
@@ -85,7 +85,7 @@ export const myName = 'mi nombre';
 export const myObject = { fruit: 'fresas' };
 ```
 
-2. Importa el fragmento desde el archivo de destino y usa la variable:
+2. Importa el fragmento desde tu archivo de destino y utiliza la variable:
 
 ```typescript destination-file.mdx
 ---
@@ -102,7 +102,7 @@ Hola, mi nombre es {myName} y me gusta {myObject.fruit}.
   ### Fragmentos de JSX
 </div>
 
-1. Exporta un componente JSX desde tu archivo de fragmento. (Consulta [Componentes de React](/es/customize/react-components) para obtener más información):
+1. Exporta un componente de JSX desde tu archivo de fragmento. (Consulta [components de React](/es/customize/react-components) para obtener más información):
 
 ```js icon=square-js snippets/my-jsx-snippet.jsx
 export const MyJSXSnippet = () => {
@@ -115,10 +115,10 @@ export const MyJSXSnippet = () => {
 ```
 
 <Note>
-  Importante: Al crear fragmentos de JSX, usa la sintaxis de funciones flecha (`=>`) en lugar de declaraciones de función. La palabra clave `function` no es compatible en este contexto.
+  Importante: Al crear fragmentos JSX, usa la sintaxis de funciones flecha (`=>`) en lugar de declaraciones de función. La palabra clave `function` no es compatible en este contexto.
 </Note>
 
-2. Importa el fragmento desde tu archivo de destino y utiliza el componente:
+2. Importa el fragmento desde tu archivo de destino y usa el componente:
 
 ```typescript destination-file.mdx
 ---
