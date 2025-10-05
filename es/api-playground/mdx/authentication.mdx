@@ -1,20 +1,18 @@
 ---
 title: "Autenticación"
-description: "Puedes configurar parámetros de autenticación para permitir que los usuarios usen sus keys de API reales."
+description: "Puedes configurar parámetros de autenticación para que los usuarios utilicen sus claves de API reales."
 ---
-
-
 
 <div id="enabling-authentication">
   ## Habilitar la autenticación
 </div>
 
-Puedes añadir un método de autenticación en tu `docs.json` para habilitarla globalmente en todas las páginas o configurarla de forma individual por página.
+Puedes agregar un método de autenticación a tu `docs.json` para habilitarlo globalmente en todas las páginas o configurarlo por página.
 
-El método de autenticación definido en una página reemplazará al global si ambos están establecidos.
+El método de autenticación de una página reemplazará al método global si ambos están definidos.
 
 <div id="bearer-token">
-  ### Token Bearer
+  ### Token portador
 </div>
 
 <CodeGroup>
@@ -31,7 +29,7 @@ El método de autenticación definido en una página reemplazará al global si a
 
 ```mdx Page Metadata
 ---
-title: "Your page title"
+title: "Título de tu página"
 authMethod: "bearer"
 ---
 ```
@@ -56,7 +54,7 @@ authMethod: "bearer"
 
 ```mdx Page Metadata
 ---
-title: "Your page title"
+title: "Título de tu página"
 authMethod: "basic"
 ---
 ```
@@ -64,7 +62,7 @@ authMethod: "basic"
 </CodeGroup>
 
 <div id="api-key">
-  ### API key
+  ### Clave de API
 </div>
 
 <CodeGroup>
@@ -82,7 +80,7 @@ authMethod: "basic"
 
 ```mdx Page Metadata
 ---
-title: "Your page title"
+title: "Título de tu página"
 authMethod: "key"
 ---
 ```
@@ -90,10 +88,10 @@ authMethod: "key"
 </CodeGroup>
 
 <div id="none">
-  ### Ninguno
+  ### None
 </div>
 
-El método de autenticación "none" es útil para deshabilitar la autenticación en un endpoint específico después de establecer un valor predeterminado en docs.json.
+El método de autenticación "none" es útil para desactivar la autenticación en un endpoint específico después de haber establecido un valor predeterminado en docs.json.
 
 <CodeGroup>
 ```mdx Page Metadata

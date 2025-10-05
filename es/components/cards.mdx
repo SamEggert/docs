@@ -1,58 +1,58 @@
 ---
-title: "Tarjetas"
-description: "Destaca los puntos clave o los enlaces con diseños e iconos personalizables"
+title: "Cards"
+description: "Resalta puntos clave o enlaces con diseños personalizables e iconos"
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-Usa tarjetas para crear contenedores visuales de contenido. Las tarjetas son contenedores flexibles que pueden incluir texto, iconos, imágenes y enlaces.
+Usa Cards para crear contenedores visuales para content. Las Cards son contenedores flexibles que pueden incluir texto, icon, imágenes y enlaces.
 
 <div id="basic-card">
-  ## Tarjeta básica
+  ## Card básica
 </div>
 
-<Card title="Título de la tarjeta" icon="text" href="/es/components/columns">
-  Así se usa una tarjeta con un icono y un enlace. Al hacer clic en esta tarjeta,
-  irás a la página Columns.
+<Card title="Card title" icon="text" href="/es/components/columns">
+  Así es como se usa una Card con un icon y un enlace. Al hacer clic en esta Card
+  irás a la página de Columns.
 </Card>
 
 ```mdx Card example
-<Card title="Título de la tarjeta" icon="text" href="/components/columns">
-  Así es como se usa una tarjeta con un icono y un enlace. Al hacer clic en esta tarjeta
-  te lleva a la página de Columnas.
+<Card title="Título del Card" icon="text" href="/components/columns">
+  Así es como usas un card con un icon y un enlace. Al hacer clic en este card
+  te lleva a la página de Columns.
 </Card>
 ```
 
 <div id="card-variations">
-  ## Variantes de tarjetas
+  ## Variaciones de Card
 </div>
 
-Las tarjetas ofrecen varias opciones de diseño y estilo para adaptarse a distintas necesidades de contenido.
+Las Cards ofrecen varias opciones de diseño y estilo para adaptarse a diferentes necesidades de content.
 
 <div id="horizontal-layout">
   ### Diseño horizontal
 </div>
 
-Agrega la propiedad `horizontal` para mostrar tarjetas en un diseño horizontal más compacto.
+Agrega la propiedad `horizontal` para mostrar las Card en un diseño horizontal más compacto.
 
-<Card title="Tarjeta horizontal" icon="text" horizontal>
-  Este es un ejemplo de una tarjeta horizontal.
+<Card title="Horizontal card" icon="text" horizontal>
+  Este es un ejemplo de una Card horizontal.
 </Card>
 
 ```mdx Horizontal card example
-<Card title="Tarjeta horizontal" icon="text" horizontal>
-  Este es un ejemplo de una tarjeta horizontal.
+<Card title="Card horizontal" icon="text" horizontal>
+  Este es un ejemplo de una card horizontal.
 </Card>
 ```
 
 <div id="image-cards">
-  ### Tarjetas con imagen
+  ### Cards con imagen
 </div>
 
-Agrega la propiedad `img` para mostrar una imagen en la parte superior de la tarjeta.
+Agrega la propiedad `img` para mostrar una imagen en la parte superior de la Card.
 
-<Card title="Tarjeta con imagen" img="https://mintlify-assets.b-cdn.net/yosemite.jpg">
-  Este es un ejemplo de una tarjeta con imagen.
+<Card title="Image card" img="https://mintlify-assets.b-cdn.net/yosemite.jpg">
+  Este es un ejemplo de una Card con imagen.
 </Card>
 
 ```mdx Image card example
@@ -62,13 +62,13 @@ Agrega la propiedad `img` para mostrar una imagen en la parte superior de la tar
 ```
 
 <div id="link-cards-with-custom-ctas">
-  ### Tarjetas de enlace con llamadas a la acción personalizadas
+  ### Tarjetas de enlace con CTA personalizados
 </div>
 
-Puedes personalizar el texto de la llamada a la acción y controlar si aparece una flecha. De forma predeterminada, las flechas solo se muestran en los enlaces externos.
+Puedes personalizar el texto del llamado a la acción y controlar si aparece una flecha. De forma predeterminada, las flechas solo se muestran en enlaces externos.
 
-<Card title="Link card" icon="link" href="/es/components/columns" arrow="true" cta="Click here">
-  Este es un ejemplo de una tarjeta con un icono y un enlace. Al hacer clic en esta tarjeta, irás a la página de Columns.
+<Card title="Link card" icon="link" href="/es/components/columns" arrow="true" cta="Haz clic aquí">
+  Este es un ejemplo de una Card con un icon y un enlace. Al hacer clic en esta Card, irás a la página de Columns.
 </Card>
 
 ```mdx Link card example
@@ -79,33 +79,33 @@ Puedes personalizar el texto de la llamada a la acción y controlar si aparece u
   arrow="true"
   cta="Haz clic aquí"
 >
-  Este es un ejemplo de una tarjeta con un icono y un enlace. Al hacer clic en esta tarjeta te lleva a la página de Columnas.
+  Este es un ejemplo de una tarjeta con un icon y un enlace. Al hacer clic en esta tarjeta te lleva a la página de Columns.
 </Card>
 ```
 
 <div id="grouping-cards">
-  ## Agrupar tarjetas
+  ## Agrupar cards
 </div>
 
-Usa el [componente Columns](/es/components/columns) para organizar varias tarjetas una junto a la otra.
+Usa el [componente Columns](/es/components/columns) para organizar varias cards lado a lado.
 
 <Columns cols={2}>
   <Card title="First card" icon="panel-left-close">
-    Esta es la primera tarjeta.
+    Esta es la primera card.
   </Card>
 
   <Card title="Second card" icon="panel-right-close">
-    Esta es la segunda tarjeta.
+    Esta es la segunda card.
   </Card>
 </Columns>
 
 ```mdx Columns example
 <Columns cols={2}>
-  <Card title="Primera tarjeta" icon="panel-left-close">
-    Esta es la primera tarjeta.
+  <Card title="Primera card" icon="panel-left-close">
+    Esta es la primera card.
   </Card>
-  <Card title="Segunda tarjeta" icon="panel-right-close">
-    Esta es la segunda tarjeta.
+  <Card title="Segunda card" icon="panel-right-close">
+    Esta es la segunda card.
   </Card>
 </Columns>
 ```
@@ -115,7 +115,7 @@ Usa el [componente Columns](/es/components/columns) para organizar varias tarjet
 </div>
 
 <ResponseField name="title" type="string" required>
-  El título que se muestra en la tarjeta
+  El title que se muestra en la Card
 </ResponseField>
 
 <IconsOptional />
@@ -125,15 +125,15 @@ Usa el [componente Columns](/es/components/columns) para organizar varias tarjet
 </ResponseField>
 
 <ResponseField name="href" type="string">
-  URL a la que se navega al hacer clic en la tarjeta.
+  URL a la que se navega cuando se hace clic en la Card.
 </ResponseField>
 
 <ResponseField name="horizontal" type="boolean">
-  Muestra la tarjeta en un diseño horizontal compacto.
+  Mostrar la Card en un diseño horizontal compacto.
 </ResponseField>
 
 <ResponseField name="img" type="string">
-  URL o ruta local de una imagen que se muestra en la parte superior de la tarjeta.
+  URL o ruta local de una imagen mostrada en la parte superior de la Card.
 </ResponseField>
 
 <ResponseField name="cta" type="string">

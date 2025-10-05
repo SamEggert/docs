@@ -1,41 +1,41 @@
 ---
 title: "SEO"
-description: "Mejores prácticas de SEO y configuración de metaetiquetas para mejorar la visibilidad en buscadores"
+description: "Buenas prácticas de SEO y configuración de metaetiquetas para mejorar la visibilidad en buscadores"
 ---
 
-Mintlify gestiona automáticamente muchas de las mejores prácticas de SEO, entre ellas:
+Mintlify gestiona automáticamente muchas buenas prácticas de SEO, entre ellas:
 
 * Generación de metaetiquetas
-* Generación del mapa del sitio (sitemap) y del archivo `robots.txt`
+* Generación del mapa del sitio y del archivo `robots.txt`
 * Estructura HTML semántica
 * Optimización para dispositivos móviles
 
-Puedes personalizar completamente las metaetiquetas de tu sitio agregando el campo `metatags` a tu `docs.json` o al frontmatter de una página.
+Puedes personalizar por completo las metaetiquetas de tu sitio añadiendo el campo `metatags` a tu `docs.json` o al frontmatter de una página.
 
 <div id="global-meta-tags">
-  ## Metadatos globales
+  ## Metaetiquetas globales
 </div>
 
-Para establecer metadatos predeterminados para todas las páginas, agrega el campo `metatags` a tu `docs.json`.
+Para establecer metaetiquetas predeterminadas para todas las páginas, agrega el campo `metatags` a tu `docs.json`.
 
 ```json
 "seo": {
     "metatags": {
-        "og:image": "enlace a tu imagen de meta etiqueta por defecto"
+        "og:image": "enlace a tu imagen de meta etiqueta predeterminada"
     }
 }
 ```
 
 <div id="page-specific-meta-tags">
-  ## Metadatos meta específicos de la página
+  ## Metatags específicos de la página
 </div>
 
-Para definir metadatos meta específicos de la página, agréguelos al frontmatter de la página.
+Para establecer metatags específicos de la página, añádelos al frontmatter de la página.
 
 ```mdx
 ---
 title: "El título de tu página de ejemplo"
-"og:image": "enlace a la imagen de tu etiqueta meta"
+"og:image": "enlace a la imagen de tu meta etiqueta"
 ---
 ```
 
@@ -44,12 +44,12 @@ title: "El título de tu página de ejemplo"
 </Note>
 
 <div id="common-meta-tags-reference">
-  ## Referencia de metaetiquetas comunes
+  ## Referencia de etiquetas meta comunes
 </div>
 
-A continuación encontrarás una lista completa de metaetiquetas que puedes añadir a tu `docs.json`. Estas metaetiquetas ayudan a mejorar el SEO de tu sitio, el alcance en redes sociales y la compatibilidad con los navegadores.
+A continuación encontrarás una lista completa de etiquetas meta que puedes agregar a tu `docs.json`. Estas etiquetas meta ayudan a mejorar el SEO de tu sitio, el alcance en redes sociales y la compatibilidad con los navegadores.
 
-Puedes obtener una vista previa de cómo se mostrarán tus metaetiquetas en diferentes plataformas usando [metatags.io](https://metatags.io/).
+Puedes ver una vista previa de cómo aparecerán tus etiquetas meta en diferentes plataformas usando [metatags.io](https://metatags.io/).
 
 ```json expandable
 "seo": {
@@ -151,7 +151,7 @@ Puedes obtener una vista previa de cómo se mostrarán tus metaetiquetas en dife
 
 Mintlify genera automáticamente un archivo `sitemap.xml` y un archivo `robots.txt`. Puedes ver tu sitemap añadiendo `/sitemap.xml` a la URL de tu sitio de documentación.
 
-De forma predeterminada, solo se incluyen las páginas presentes en tu `docs.json`. Para incluir enlaces ocultos, añade `seo.indexing` a tu `docs.json`:
+De forma predeterminada, solo se incluyen las páginas que están en tu `docs.json`. Para incluir enlaces ocultos, añade `seo.indexing` a tu `docs.json`:
 
 ```json
 "seo": {
@@ -163,13 +163,13 @@ De forma predeterminada, solo se incluyen las páginas presentes en tu `docs.jso
   ### Sitemaps y archivos robots.txt personalizados
 </div>
 
-Para añadir un archivo `sitemap.xml` o `robots.txt` personalizado, crea un archivo `sitemap.xml` o `robots.txt` en la raíz de tu proyecto. Añadir un archivo personalizado sustituirá al archivo generado automáticamente con el mismo nombre. Si eliminas un archivo personalizado, se volverá a usar el archivo predeterminado.
+Para añadir un archivo `sitemap.xml` o `robots.txt` personalizado, crea un archivo `sitemap.xml` o `robots.txt` en la raíz de tu proyecto. Añadir un archivo personalizado reemplazará el archivo generado automáticamente con el mismo nombre. Si eliminas un archivo personalizado, se volverá a utilizar el archivo predeterminado.
 
 <div id="disabling-indexing">
   ## Desactivar la indexación
 </div>
 
-Si quieres evitar que los motores de búsqueda indexen una página, puedes incluir lo siguiente en el [frontmatter](es/pages) de tu página:
+Si quieres impedir que los motores de búsqueda indexen una página, puedes incluir lo siguiente en el [frontmatter](es/pages) de tu página:
 
 ```
 ---
@@ -177,7 +177,7 @@ noindex: true
 ---
 ```
 
-También puedes especificar `noindex` para todas las páginas de tu documentación configurando el campo `metatags.robots` con `"noindex"` en tu `docs.json`:
+También puedes especificar `noindex` para todas las páginas de tu documentación estableciendo el campo `metatags.robots` en `"noindex"` en tu `docs.json`:
 
 ```json
 "seo": {
@@ -192,17 +192,17 @@ También puedes especificar `noindex` para todas las páginas de tu documentaci�
 </div>
 
 <AccordionGroup>
-  <Accordion title="Redacta títulos y descripciones informativas">
-    * Usa títulos de página claros y descriptivos (50-60 caracteres)
-    * Redacta descripciones convincentes (150-160 caracteres)
+  <Accordion title="Escribe títulos y descripciones claras">
+    * Usa títulos de página claros y descriptivos (50–60 caracteres)
+    * Escribe descripciones convincentes (150–160 caracteres)
     * Incluye palabras clave relevantes
-    * Haz que cada título de página y cada descripción sean únicos
+    * Asegúrate de que cada título y descripción de página sean únicos
   </Accordion>
 
   <Accordion title="Optimiza la estructura de tu contenido">
-    * Utiliza una jerarquía de encabezados adecuada (H1 → H2 → H3)
-    * Escribe para personas primero y para motores de búsqueda después
-    * Incluye palabras clave relevantes en los encabezados y el contenido
+    * Usa una jerarquía de encabezados adecuada (H1 → H2 → H3)
+    * Escribe primero para personas y después para motores de búsqueda
+    * Incluye palabras clave relevantes en encabezados y en el contenido
     * Mantén las URL cortas, descriptivas y organizadas jerárquicamente
     * Divide el contenido extenso con subtítulos y listas
   </Accordion>
@@ -210,14 +210,14 @@ También puedes especificar `noindex` para todas las páginas de tu documentaci�
   <Accordion title="Estrategia de enlaces internos">
     * Enlaza a páginas relacionadas dentro de tu documentación
     * Usa texto de anclaje descriptivo en lugar de &quot;haz clic aquí&quot;
-    * Crea clústeres de temas enlazando conceptos relacionados
-    * Utiliza las funciones automáticas de referencias cruzadas
+    * Crea grupos temáticos enlazando conceptos relacionados
+    * Usa las funciones de referencia cruzada automática
   </Accordion>
 
-  <Accordion title="SEO de imágenes">
+  <Accordion title="SEO para imágenes">
     * Usa nombres de archivo descriptivos para las imágenes
     * Incluye siempre texto alternativo por accesibilidad y SEO
-    * Optimiza el tamaño de los archivos de imagen para una carga más rápida
+    * Optimiza el peso de las imágenes para una carga más rápida
     * Usa imágenes relevantes que respalden tu contenido
   </Accordion>
 </AccordionGroup>

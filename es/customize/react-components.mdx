@@ -1,23 +1,23 @@
 ---
 title: "React"
-description: "Crea elementos interactivos y reutilizables con componentes de React"
+description: "Crea elementos interactivos y reutilizables con components de React"
 ---
 
 import { ColorGenerator } from "/snippets/color-generator.jsx";
 
-Los [componentes de React](https://react.dev) son una forma poderosa de crear elementos interactivos y reutilizables en tu documentación.
+[Componentes de React](https://react.dev) son una forma poderosa de crear elementos interactivos y reutilizables en tu documentación.
 
 <div id="using-react-components">
-  ## Uso de componentes de React
+  ## Uso de components de React
 </div>
 
-Puedes construir componentes de React directamente en tus archivos `MDX` con [React hooks](https://react.dev/reference/react/hooks).
+Puedes crear components de React directamente en tus archivos `MDX` usando [hooks de React](https://react.dev/reference/react/hooks).
 
 <div id="example">
   ### Ejemplo
 </div>
 
-Este ejemplo declara un componente `Counter` y luego lo utiliza con `<Counter />`.
+Este ejemplo declara un componente `Counter` y luego lo usa con `<Counter />`.
 
 ```mdx
 export const Counter = () => {
@@ -80,7 +80,7 @@ export const Counter = () => {
         <button
           onClick={increment}
           className="flex items-center justify-center h-8 w-8 text-zinc-950/80 dark:text-white/80 border-l border-zinc-950/20 dark:border-white/20"
-          aria-label="Incrementar"
+          aria-label="Aumentar"
         >
           +
         </button>
@@ -89,15 +89,15 @@ export const Counter = () => {
   )
 }
 
-El contador se representa como un componente interactivo de React.
+El contador se renderiza como un componente interactivo de React.
 
 <Counter />
 
 <div id="importing-components">
-  ## Importación de componentes
+  ## Importar components
 </div>
 
-Puedes importar componentes desde tu carpeta `snippets`. A diferencia de React, no puedes importar componentes desde cualquier archivo `MDX`. Los componentes reutilizables deben hacer referencia a archivos dentro de la carpeta `snippets`. Obtén más información sobre [fragmentos reutilizables](/es/create/reusable-snippets).
+Puedes importar components desde tu carpeta `snippets`. A diferencia de React regular, no puedes importar components desde cualquier archivo `MDX`. Los components reutilizables deben referenciarse desde archivos dentro de la carpeta `snippets`. Obtén más información sobre [reusable snippets](/es/create/reusable-snippets).
 
 <div id="example">
   ### Ejemplo
@@ -127,7 +127,7 @@ export const ColorGenerator = () => {
     navigator.clipboard
       .writeText(color)
       .then(() => {
-        console.log(`${color} copiado al portapapeles`)
+        console.log(`Copiado ${color} al portapapeles!`)
       })
       .catch((err) => {
         console.error("Error al copiar: ", err)
@@ -203,15 +203,15 @@ export const ColorGenerator = () => {
               key={idx}
               className="h-16 rounded flex-1 cursor-pointer transition-transform hover:scale-105"
               style={{ backgroundColor: color }}
-              title={`Clic para copiar: ${color}`}
+              title={`Haz clic para copiar: ${color}`}
               onClick={() => copyToClipboard(color)}
             />
           ))}
         </div>
 
         <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70">
-          <p>
             Color base: hsl({hue}, {saturation}%, {lightness}%)
+            Base color: hsl({hue}, {saturation}%, {lightness}%)
           </p>
         </div>
       </div>
@@ -228,7 +228,7 @@ import { ColorGenerator } from "/snippets/color-generator.jsx"
 <ColorGenerator />
 ```
 
-El generador de colores se renderiza como un componente interactivo de React.
+El generador de colores se muestra como un componente interactivo de React.
 
 <ColorGenerator />
 
@@ -238,17 +238,17 @@ El generador de colores se renderiza como un componente interactivo de React.
 
 <AccordionGroup>
   <Accordion title="Impacto del renderizado en el cliente">
-    Los componentes que usan hooks de React se renderizan en el cliente, lo que tiene varias implicaciones:
+    Los components con hooks de React se renderizan en el lado del cliente, lo que tiene varias implicaciones:
 
     * **SEO**: Es posible que los motores de búsqueda no indexen por completo el contenido dinámico.
-    * **Carga inicial**: Los visitantes pueden ver un parpadeo de contenido de carga antes de que se rendericen los componentes.
+    * **Carga inicial**: Los visitantes pueden ver un destello de contenido de carga antes de que se rendericen los components.
     * **Accesibilidad**: Asegúrate de que los cambios en el contenido dinámico se anuncien a los lectores de pantalla.
   </Accordion>
 
   <Accordion title="Mejores prácticas de rendimiento">
     * **Optimiza los arrays de dependencias**: Incluye solo las dependencias necesarias en tus arrays de dependencias de `useEffect`.
-    * **Memoriza cálculos complejos**: Usa `useMemo` o `useCallback` para operaciones costosas.
-    * **Reduce los re-renderizados**: Divide los componentes grandes en otros más pequeños para evitar re-renderizados en cascada.
-    * **Carga diferida (lazy loading)**: Considera cargar de forma diferida los componentes complejos para mejorar el tiempo de carga inicial de la página.
+    * **Memoiza cálculos complejos**: Usa `useMemo` o `useCallback` para operaciones costosas.
+    * **Reduce los re-renderizados**: Divide los components grandes en otros más pequeños para evitar re-renderizados en cascada.
+    * **Carga diferida (lazy loading)**: Considera la carga diferida de components complejos para mejorar el tiempo de carga inicial de la página.
   </Accordion>
 </AccordionGroup>

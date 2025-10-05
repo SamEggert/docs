@@ -1,12 +1,12 @@
 ---
 title: "Configuración global"
 description: "Configura la configuración del sitio con el archivo `docs.json`"
-keywords: ["docs.json", "configuración", "personalización", "ajustes"]
+keywords: ["docs.json", "settings", "customization", "configuration"]
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-El archivo `docs.json` te permite convertir una colección de archivos Markdown en un sitio de documentación navegable y personalizado. Este archivo de configuración obligatorio controla el estilo, la navigation, las integrations y más. Piénsalo como el plano de tu documentación.
+El archivo `docs.json` te permite convertir una colección de archivos Markdown en un sitio de documentación navegable y personalizado. Este archivo de configuración requerido controla el estilo, la navegación, las integraciones y más. Piénsalo como el plano de tu documentación.
 
 La configuración en `docs.json` se aplica globalmente a todas las páginas.
 
@@ -16,13 +16,13 @@ La configuración en `docs.json` se aplica globalmente a todas las páginas.
 
 Para empezar, solo necesitas especificar `theme`, `name`, `colors.primary` y `navigation`. Los demás campos son opcionales y puedes añadirlos a medida que crezcan las necesidades de tu documentación.
 
-Para obtener la mejor experiencia de edición, incluye la referencia del esquema en la parte superior de tu archivo `docs.json`. Esto habilita el autocompletado, la validación y sugerencias útiles en la mayoría de los editores de código:
+Para una mejor experiencia de edición, incluye la referencia del esquema en la parte superior de tu archivo `docs.json`. Esto habilita el autocompletado, la validación y los tooltips informativos en la mayoría de los editores de código:
 
 ```json
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Tu Documentación",
+  "name": "Tus Docs",
   "colors": {
     "primary": "#ff0000"
   },
@@ -48,7 +48,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   Una de las siguientes: `mint`, `maple`, `palm`, `willow`, `linden`, `almond`, `aspen`.
 
-  Consulta [Temas](es/themes) para obtener más información.
+  Consulta [Themes](es/themes) para obtener más información.
 </ResponseField>
 
 <ResponseField name="name" type="string" required>
@@ -56,58 +56,58 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 </ResponseField>
 
 <ResponseField name="colors" type="object" required>
-  Los colores que usa tu documentación. Los colores se aplican de forma diferente según el tema. Si solo proporcionas un color principal, se usará para todos los elementos de color.
+  Los colores usados en tu documentación. Se aplican de forma diferente según el tema. Si solo proporcionas un color primario, se usará para todos los elementos de color.
 
   <Expandable title="Colors">
     <ResponseField name="primary" type="string matching ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" required>
-      El color principal de tu documentación. Generalmente se usa para resaltar en modo claro, con algunas variaciones según el tema.
+      El color primario de tu documentación. Generalmente se usa para énfasis en el modo light, con algunas variaciones según el tema.
 
-      Debe ser un código hexadecimal que comience con `#`.
+      Debe ser un código hex que comience con `#`.
     </ResponseField>
 
     <ResponseField name="light" type="string matching ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$">
-      El color utilizado para resaltar en modo oscuro.
+      El color usado para énfasis en el modo oscuro.
 
-      Debe ser un código hexadecimal que comience con `#`.
+      Debe ser un código hex que comience con `#`.
     </ResponseField>
 
     <ResponseField name="dark" type="string matching ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$">
-      El color utilizado para botones y estados hover en modo claro y oscuro, con algunas variaciones según el tema.
+      El color usado para botones y estados hover en los modos light y oscuro, con algunas variaciones según el tema.
 
-      Debe ser un código hexadecimal que comience con `#`.
+      Debe ser un código hex que comience con `#`.
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Descripción de tu sitio para SEO e indexación de IA.
+  Descripción de tu sitio para SEO e indexación por IA.
 </ResponseField>
 
 <ResponseField name="logo" type="string or object">
-  Tu logotipo para los modos claro y oscuro.
+  Tu logo para los modos light y oscuro.
 
   <Expandable title="Logo">
     <ResponseField name="light" type="string" required>
-      Ruta al archivo de tu logotipo para el modo claro. Incluye la extensión del archivo. Ejemplo: `/logo.png`
+      Ruta a tu archivo de logo para el modo light. Incluye la extensión del archivo. Ejemplo: `/logo.png`
     </ResponseField>
 
     <ResponseField name="dark" type="string" required>
-      Ruta al archivo de tu logotipo para el modo oscuro. Incluye la extensión del archivo. Ejemplo: `/logo-dark.png`
+      Ruta a tu archivo de logo para el modo oscuro. Incluye la extensión del archivo. Ejemplo: `/logo-dark.png`
     </ResponseField>
 
     <ResponseField name="href" type="string (uri)">
-      La URL a la que se redirige al hacer clic en el logotipo. Si no se proporciona, el logotipo enlazará a tu página de inicio. Ejemplo: `https://mintlify.com`
+      La URL a la que redirigir al hacer clic en el logo. Si no se proporciona, el logo enlazará a tu página de inicio. Ejemplo: `https://mintlify.com`
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="favicon" type="string or object">
-  Ruta a tu archivo de favicon, incluida la extensión. Se redimensiona automáticamente a los tamaños de favicon adecuados.
-  Puede ser un único archivo o archivos separados para los modos claro y oscuro. Ejemplo: `/favicon.png`
+  Ruta a tu archivo de favicon, incluida la extensión del archivo. Se redimensiona automáticamente a los tamaños de favicon adecuados.
+  Puede ser un único archivo o archivos separados para los modos light y oscuro. Ejemplo: `/favicon.png`
 
   <Expandable title="Favicon">
     <ResponseField name="light" type="string" required>
-      Ruta a tu archivo de favicon para el modo claro. Incluye la extensión del archivo. Ejemplo: `/favicon.png`
+      Ruta a tu archivo de favicon para el modo light. Incluye la extensión del archivo. Ejemplo: `/favicon.png`
     </ResponseField>
 
     <ResponseField name="dark" type="string" required>
@@ -121,7 +121,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Thumbnails">
     <ResponseField name="appearance" type="&#x22;light&#x22; | &#x22;dark&#x22;">
-      El tema visual de tus miniaturas. Si no se especifica, las miniaturas usan el esquema de color de tu sitio definido en el campo `colors`.
+      El tema visual de tus miniaturas. Si no se especifica, las miniaturas usan el esquema de color de tu sitio definido por el campo `colors`.
     </ResponseField>
 
     <ResponseField name="background" type="string">
@@ -135,15 +135,15 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Styling">
     <ResponseField name="eyebrows" type="&#x22;section&#x22; | &#x22;breadcrumbs&#x22;">
-      El estilo del “eyebrow” de la página. Elige `section` para mostrar el nombre de la sección o `breadcrumbs` para mostrar la ruta completa de navegación. De forma predeterminada es `section`.
+      El estilo del encabezado superior de la página. Elige `section` para mostrar el nombre de la sección o `breadcrumbs` para mostrar la ruta completa de navegación. De forma predeterminada es `section`.
     </ResponseField>
 
     <ResponseField name="codeblocks" type="&#x22;system&#x22; | &#x22;dark&#x22; | string | object">
-      Configuración del tema de los bloques de código. De forma predeterminada es `"system"`.
+      Configuración del tema de los bloques de código. El valor predeterminado es `"system"`.
 
       **Configuración simple:**
 
-      * `"system"`: Coincidir con el modo actual del sitio (claro u oscuro)
+      * `"system"`: Coincidir con el modo actual del sitio (claro o oscuro)
       * `"dark"`: Usar siempre el modo oscuro
 
       **Configuración de tema personalizada:**
@@ -152,7 +152,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
       * Usa un objeto para especificar [temas de Shiki](https://shiki.style/themes) separados para los modos claro y oscuro
 
       <ResponseField name="theme" type="string">
-        Un único nombre de tema de Shiki para usar tanto en modo claro como oscuro.
+        Un único nombre de tema de Shiki para usar en los modos claro y oscuro.
 
         ```json
         "styling": {
@@ -196,7 +196,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Icons">
     <ResponseField name="library" type="&#x22;fontawesome&#x22; | &#x22;lucide&#x22;" required>
-      Biblioteca de iconos para usar en toda tu documentación. De forma predeterminada es `fontawesome`.
+      Biblioteca de iconos que se usará en toda tu documentación. El valor predeterminado es `fontawesome`.
 
       <Note>
         Puedes especificar una URL a un icono alojado externamente, la ruta a un archivo de icono en tu proyecto o código SVG compatible con JSX para cualquier icono individual, independientemente de la configuración de la biblioteca.
@@ -210,7 +210,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Fuentes">
     <ResponseField name="family" type="string" required>
-      Familia tipográfica, por ejemplo, &quot;Open Sans&quot;.
+      Familia tipográfica, como &quot;Open Sans&quot;.
     </ResponseField>
 
     <ResponseField name="weight" type="number">
@@ -218,7 +218,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="source" type="string (uri)">
-      URL del archivo de tu fuente, por ejemplo, https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se cargan automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no se necesita una URL de fuente.
+      URL de tu fuente tipográfica, por ejemplo https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se carga automáticamente cuando especificas el nombre de `family` de una Google Font, por lo que no es necesaria una URL de fuente.
     </ResponseField>
 
     <ResponseField name="format" type="&#x22;woff&#x22; | &#x22;woff2&#x22;">
@@ -226,11 +226,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="heading" type="object">
-      Sobrescribe la configuración de la fuente específicamente para los encabezados.
+      Sobrescribe la configuración tipográfica específicamente para los encabezados.
 
       <Expandable title="Encabezado">
         <ResponseField name="family" type="string" required>
-          Familia tipográfica, por ejemplo, &quot;Open Sans&quot;, &quot;Playfair Display&quot;.
+          Familia tipográfica, como &quot;Open Sans&quot; o &quot;Playfair Display&quot;.
         </ResponseField>
 
         <ResponseField name="weight" type="number">
@@ -238,7 +238,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          URL del archivo de tu fuente, por ejemplo, https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se cargan automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no se necesita una URL de fuente.
+          URL de tu fuente tipográfica, por ejemplo https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se carga automáticamente cuando especificas el nombre de `family` de una Google Font, por lo que no es necesaria una URL de fuente.
         </ResponseField>
 
         <ResponseField name="format" type="&#x22;woff&#x22; | &#x22;woff2&#x22;">
@@ -248,11 +248,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="body" type="object">
-      Sobrescribe la configuración de la fuente específicamente para el cuerpo del texto.
+      Sobrescribe la configuración tipográfica específicamente para el cuerpo de texto.
 
       <Expandable title="Cuerpo">
         <ResponseField name="family" type="string" required>
-          Familia tipográfica, por ejemplo, &quot;Open Sans&quot;, &quot;Playfair Display&quot;.
+          Familia tipográfica, como &quot;Open Sans&quot; o &quot;Playfair Display&quot;.
         </ResponseField>
 
         <ResponseField name="weight" type="number">
@@ -260,7 +260,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          URL del archivo de tu fuente, por ejemplo, https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se cargan automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no se necesita una URL de fuente.
+          URL de tu fuente tipográfica, por ejemplo https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2. [Google Fonts](https://fonts.google.com) se carga automáticamente cuando especificas el nombre de `family` de una Google Font, por lo que no es necesaria una URL de fuente.
         </ResponseField>
 
         <ResponseField name="format" type="&#x22;woff&#x22; | &#x22;woff2&#x22;">
@@ -276,7 +276,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Apariencia">
     <ResponseField name="default" type="&#x22;system&#x22; | &#x22;light&#x22; | &#x22;dark&#x22;">
-      Modo de tema predeterminado. Elige `system` para ajustarlo a la configuración del sistema operativo del usuario, o `light` o `dark` para forzar un modo específico. De manera predeterminada es `system`.
+      Modo de tema predeterminado. Elige `system` para ajustarse a la configuración del sistema operativo del usuario, o `light` o `dark` para forzar un modo específico. De manera predeterminada es `system`.
     </ResponseField>
 
     <ResponseField name="strict" type="boolean">
@@ -286,7 +286,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 </ResponseField>
 
 <ResponseField name="background" type="object">
-  Configuración del color y la decoración del fondo.
+  Configuración de color y decoración del fondo.
 
   <Expandable title="Background">
     <ResponseField name="image" type="string or object">
@@ -336,9 +336,9 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Navbar">
     <ResponseField name="links" type="array of object">
-      Enlaces que se mostrarán en la barra de navegación.
+      Enlaces que se mostrarán en la barra de navegación
 
-      <Expandable title="Enlaces">
+      <Expandable title="Links">
         <ResponseField name="label" type="string" required>
           Texto del enlace.
         </ResponseField>
@@ -352,11 +352,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="primary" type="object">
-      Botón principal de la barra de navegación.
+      Botón principal en la barra de navegación.
 
-      <Expandable title="Principal">
+      <Expandable title="Primary">
         <ResponseField name="type" type="&#x22;button&#x22; | &#x22;github&#x22;" required>
-          Estilo del botón. Elige `button` para un botón estándar con label o `github` para un enlace a un repositorio de GitHub con icon.
+          Estilo del botón. Elige `button` para un botón estándar con texto o `github` para un enlace a un repositorio de GitHub con icono.
         </ResponseField>
 
         <ResponseField name="label" type="string" required>
@@ -371,7 +371,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
   </Expandable>
 </ResponseField>
 
-<ResponseField name="navigation" type="object" required>
+<ResponseField name="Navegación" type="object" required>
   La estructura de navegación de tu contenido.
 
   <Expandable title="Navegación">
@@ -380,7 +380,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Global">
         <ResponseField name="idiomas" type="array of object">
-          Configuración del selector de idioma para sitios con localización.
+          Configuración del selector de idioma para sitios con contenido localizado.
 
           <Expandable title="Languages">
             <ResponseField name="language" type="&#x22;en&#x22; | &#x22;cn&#x22; | &#x22;zh&#x22; | &#x22;zh-Hans&#x22; | &#x22;zh-Hant&#x22; | &#x22;es&#x22; | &#x22;fr&#x22; | &#x22;ja&#x22; | &#x22;jp&#x22; | &#x22;pt&#x22; | &#x22;pt-BR&#x22; | &#x22;de&#x22; | &#x22;ko&#x22; | &#x22;it&#x22; | &#x22;ru&#x22; | &#x22;id&#x22; | &#x22;ar&#x22; | &#x22;tr&#x22;" required>
@@ -388,21 +388,21 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             </ResponseField>
 
             <ResponseField name="default" type="boolean">
-              Indica si este es el idioma predeterminado.
+              Indica si es el idioma predeterminado.
             </ResponseField>
 
             <ResponseField name="hidden" type="boolean">
-              Indica si se debe ocultar esta opción de idioma de forma predeterminada.
+              Indica si esta opción de idioma se oculta de forma predeterminada.
             </ResponseField>
 
             <ResponseField name="href" type="string (uri)" required>
-              Ruta válida o enlace externo a la versión de tu documentación en este idioma.
+              Ruta válida o enlace externo a la versión en este idioma de tu documentación.
             </ResponseField>
           </Expandable>
         </ResponseField>
 
         <ResponseField name="versiones" type="array of object">
-          Configuración del conmutador de versiones para sitios con varias versiones.
+          Configuración del selector de versiones para sitios con múltiples versiones.
 
           <Expandable title="Versions">
             <ResponseField name="version" type="string" required>
@@ -430,7 +430,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
           <Expandable title="Tabs">
             <ResponseField name="tab" type="string" required>
-              Nombre visible de la Tab.
+              Nombre visible de la pestaña.
 
               Longitud mínima: 1
             </ResponseField>
@@ -438,19 +438,19 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             <IconsOptional />
 
             <ResponseField name="hidden" type="boolean">
-              Indica si esta Tab se oculta de forma predeterminada.
+              Indica si esta pestaña se oculta de forma predeterminada.
             </ResponseField>
 
             <ResponseField name="href" type="string (uri)" required>
-              URL o ruta de destino de la Tab.
+              URL o ruta del destino de la pestaña.
             </ResponseField>
           </Expandable>
         </ResponseField>
 
         <ResponseField name="anclas" type="array of object">
-          Enlaces con ancla que aparecen de forma destacada en la navigation de la barra lateral.
+          Enlaces anclados que aparecen de forma destacada en la navegación de la barra lateral.
 
-          <Expandable title="Anclas">
+          <Expandable title="Anchors">
             <ResponseField name="anchor" type="string" required>
               Nombre visible del ancla.
 
@@ -478,7 +478,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             </ResponseField>
 
             <ResponseField name="hidden" type="boolean">
-              Indica si se debe ocultar este ancla de forma predeterminada.
+              Si se debe ocultar este ancla de manera predeterminada.
             </ResponseField>
 
             <ResponseField name="href" type="string (uri)" required>
@@ -487,12 +487,12 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
           </Expandable>
         </ResponseField>
 
-        <ResponseField name="menús desplegables" type="array of object">
+        <ResponseField name="desplegables" type="array of object">
           Menús desplegables para organizar contenido relacionado.
 
-          <Expandable title="Desplegables">
+          <Expandable title="Menús desplegables">
             <ResponseField name="dropdown" type="string" required>
-              Nombre visible del desplegable.
+              Nombre visible del menú desplegable.
 
               Longitud mínima: 1
             </ResponseField>
@@ -500,11 +500,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             <IconsOptional />
 
             <ResponseField name="hidden" type="boolean">
-              Indica si este desplegable se oculta de forma predeterminada.
+              Si ocultar este menú desplegable de forma predeterminada.
             </ResponseField>
 
             <ResponseField name="href" type="string (uri)" required>
-              URL o ruta de destino del desplegable.
+              URL o ruta del destino del menú desplegable.
             </ResponseField>
           </Expandable>
         </ResponseField>
@@ -519,8 +519,8 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
       Selector de versión para sitios con varias [versiones](es/navigation#versions).
     </ResponseField>
 
-    <ResponseField name="pestañas" type="array of object">
-      Pestañas de navigation de nivel superior [Tabs](es/navigation#tabs).
+    <ResponseField name="Tabs" type="array of object">
+      Navegación de nivel superior [Tabs](es/navigation#tabs).
     </ResponseField>
 
     <ResponseField name="anclas" type="array of object">
@@ -532,7 +532,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="groups" type="array of object">
-      [Groups](es/navigation#groups) para organizar el contenido en secciones.
+      [groups](es/navigation#groups) para organizar el content en secciones.
     </ResponseField>
 
     <ResponseField name="páginas" type="array of string or object">
@@ -546,7 +546,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Interacción">
     <ResponseField name="drilldown" type="boolean">
-      Controla el comportamiento de navegación automática al seleccionar grupos de navegación. Establece `true` para forzar la navegación a la primera página cuando se expanda un grupo de navegación. Establece `false` para evitar la navegación y solo expandir o contraer el grupo. Déjalo sin definir para usar el comportamiento predeterminado del tema.
+      Controla el comportamiento de navegación automática al seleccionar grupos de navegación. Configúralo en `true` para forzar la navegación a la primera página cuando se expanda un grupo de navegación. Configúralo en `false` para evitar la navegación y solo expandir o contraer el grupo. Déjalo sin definir para usar el comportamiento predeterminado del tema.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -556,7 +556,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
   <Expandable title="Pie de página">
     <ResponseField name="socials" type="object">
-      Perfiles de redes sociales para mostrar en el pie de página. Cada key es el nombre de una plataforma y cada value es la URL de tu perfil. Por ejemplo:
+      Perfiles de redes sociales para mostrar en el pie de página. Cada clave es el nombre de una plataforma y cada valor es la URL de tu perfil. Por ejemplo:
 
       ```json
       {
@@ -636,40 +636,40 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 </ResponseField>
 
 <ResponseField name="contextual" type="object">
-  Menú contextual para contenido optimizado con IA e integraciones.
+  Menú contextual para contenido e integraciones optimizados con IA.
 
   <Expandable title="Contextual">
     <ResponseField name="options" type="array of &#x22;copy&#x22; | &#x22;view&#x22; | &#x22;chatgpt&#x22; | &#x22;claude&#x22; | &#x22;perplexity&#x22; | &#x22;mcp&#x22; | &#x22;cursor&#x22; | &#x22;vscode&#x22;" required>
       Acciones disponibles en el menú contextual. La primera opción aparece como predeterminada.
 
-      * `copy`: Copia la página actual como Markdown en el portapapeles.
+      * `copy`: Copia la página actual como Markdown al portapapeles.
       * `view`: Muestra la página actual como Markdown en una nueva pestaña.
       * `chatgpt`: Envía el contenido de la página actual a ChatGPT.
       * `claude`: Envía el contenido de la página actual a Claude.
       * `perplexity`: Envía el contenido de la página actual a Perplexity.
-      * `mcp`: Copia la URL de tu servidor MCP en el portapapeles.
+      * `mcp`: Copia la URL de tu servidor MCP al portapapeles.
       * `cursor`: Instala tu servidor MCP alojado en Cursor.
       * `vscode`: Instala tu servidor MCP alojado en VSCode.
 
       <img src="/images/page-context-menu.png" alt="Menú contextual" className="rounded-xl" />
 
       <Note>
-        El menú contextual solo está disponible en implementaciones de vista previa y de producción.
+        El menú contextual solo está disponible en los despliegues de vista previa y de producción.
       </Note>
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <div id="api-configurations">
-  ### Configuraciones de la API
+  ### Configuraciones de API
 </div>
 
 <ResponseField name="api" type="object">
-  Configuración de la documentación de la API y del área de pruebas interactiva.
+  Configuración de la documentación de la API y del API playground interactivo.
 
   <Expandable title="Api">
     <ResponseField name="openapi" type="string or array or object">
-      Archivos de especificación OpenAPI para generar la documentación de la API. Puede ser una única URL/ruta o una matriz de URL/rutas.
+      Archivos de especificación OpenAPI para generar documentación de la API. Puede ser una única URL/ruta o una matriz de URL/rutas.
 
       <Expandable title="Openapi">
         <ResponseField name="source" type="string">
@@ -679,7 +679,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
         </ResponseField>
 
         <ResponseField name="directory" type="string">
-          Directorio en el que buscar archivos OpenAPI.
+          Directorio donde buscar archivos OpenAPI.
 
           No incluyas una barra inicial.
         </ResponseField>
@@ -687,7 +687,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="asyncapi" type="string or array or object">
-      Archivos de especificación AsyncAPI para generar la documentación de la API. Puede ser una única URL/ruta o una matriz de URL/rutas.
+      Archivos de especificación AsyncAPI para generar documentación de la API. Puede ser una única URL/ruta o una matriz de URL/rutas.
 
       <Expandable title="Asyncapi">
         <ResponseField name="source" type="string">
@@ -697,7 +697,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
         </ResponseField>
 
         <ResponseField name="directory" type="string">
-          Directorio en el que buscar archivos AsyncAPI.
+          Directorio donde buscar archivos AsyncAPI.
 
           No incluyas una barra inicial.
         </ResponseField>
@@ -715,35 +715,35 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="playground" type="object">
-      Configuración del área de pruebas de la API.
+      Configuración del API playground.
 
       <Expandable title="Playground">
         <ResponseField name="display" type="&#x22;interactive&#x22; | &#x22;simple&#x22; | &#x22;none&#x22;">
-          Modo de visualización del área de pruebas de la API. El valor predeterminado es `interactive`.
+          Modo de visualización del API playground. El valor predeterminado es `interactive`.
         </ResponseField>
 
         <ResponseField name="proxy" type="boolean">
-          Indica si las solicitudes de la API se envían a través de un servidor proxy. El valor predeterminado es `true`.
+          Indica si se envían las solicitudes de API a través de un servidor proxy. El valor predeterminado es `true`.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="examples" type="object">
-      Configuración de los ejemplos de API generados automáticamente.
+      Configuraciones para los ejemplos de API generados automáticamente.
 
       <Expandable title="Examples">
         <ResponseField name="languages" type="array of string">
-          Idiomas de ejemplo para los fragmentos de API generados automáticamente
+          Lenguajes de ejemplo para los fragmentos de API generados automáticamente
         </ResponseField>
 
         <ResponseField name="defaults" type="&#x22;required&#x22; | &#x22;all&#x22;">
-          Indica si se muestran los parámetros opcionales en los ejemplos de la API. El valor predeterminado es `all`.
+          Indica si se muestran parámetros opcionales en los ejemplos de API. El valor predeterminado es `all`.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="mdx" type="object">
-      Configuración de las páginas de la API generadas a partir de archivos `MDX`.
+      Configuraciones para páginas de API generadas a partir de archivos `MDX`.
 
       <Expandable title="Mdx">
         <ResponseField name="auth" type="object">
@@ -751,17 +751,17 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
           <Expandable title="Auth">
             <ResponseField name="method" type="&#x22;bearer&#x22; | &#x22;basic&#x22; | &#x22;key&#x22; | &#x22;cobo&#x22;">
-              Método de autenticación para solicitudes de la API.
+              Método de autenticación para solicitudes de API.
             </ResponseField>
 
             <ResponseField name="name" type="string">
-              Nombre de la autenticación para solicitudes de la API.
+              Nombre de la autenticación para solicitudes de API.
             </ResponseField>
           </Expandable>
         </ResponseField>
 
         <ResponseField name="server" type="string or array">
-          Configuración del servidor para solicitudes de la API.
+          Configuración del servidor para solicitudes de API.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -773,15 +773,15 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 </div>
 
 <ResponseField name="seo" type="object">
-  Configuraciones de indexación para SEO.
+  Configuraciones de indexación SEO.
 
-  <Expandable title="SEO">
+  <Expandable title="Seo">
     <ResponseField name="metatags" type="object">
-      Metatags añadidos a cada página. Debe ser un par key-value válido. Consulta la [referencia de metatags comunes](/es/optimize/seo#common-meta-tags-reference) para ver las opciones.
+      Metatags añadidas a cada página. Debe ser un par key-value válido. Consulta la [referencia de metatags comunes](/es/optimize/seo#common-meta-tags-reference) para ver las opciones.
     </ResponseField>
 
     <ResponseField name="indexing" type="&#x22;navigable&#x22; | &#x22;all&#x22;">
-      Especifica qué páginas deben indexar los motores de búsqueda. Elige `navigable` para indexar solo las páginas que estén en la navigation de tu `docs.json` o elige `all` para indexar todas las páginas. De manera predeterminada, es `navigable`.
+      Especifica qué páginas deben indexar los motores de búsqueda. Elige `navigable` para indexar solo las páginas que están en la navegación de tu `docs.json` o elige `all` para indexar todas las páginas. El valor predeterminado es `navigable`.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -800,16 +800,16 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
   ### Integraciones
 </div>
 
-<ResponseField name="Integraciones" type="object">
+<ResponseField name="integraciones" type="object">
   Integraciones de terceros.
 
   <Expandable title="Integraciones">
     <ResponseField name="Amplitude" type="object">
-      Integración con Amplitude Analytics.
+      Integración de Analíticas de Amplitude.
 
       <Expandable title="Amplitude">
         <ResponseField name="apiKey" type="string" required>
-          Tu API key de Amplitude.
+          Tu clave de API de Amplitude.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -825,21 +825,21 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="Fathom" type="object">
-      Integración con Fathom Analytics.
+      Integración con Fathom Analíticas.
 
       <Expandable title="Fathom">
         <ResponseField name="siteId" type="string" required>
-          Tu ID del sitio en Fathom.
+          Tu id de sitio en Fathom.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
-    <ResponseField name="Front Chat" type="object">
-      Integración de Front Chat.
+    <ResponseField name="Frontchat" type="object">
+      Integración con Front Chat.
 
-      <Expandable title="Frontchat">
+      <Expandable title="Front Chat">
         <ResponseField name="snippetId" type="string" required>
-          Tu ID del fragmento de Front Chat.
+          Tu id del snippet de Front Chat.
 
           Longitud mínima: 6
         </ResponseField>
@@ -851,19 +851,19 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Ga4">
         <ResponseField name="measurementId" type="string matching ^G" required>
-          Tu ID de medición de Google Analytics 4.
+          Tu id de medición de Google Analytics 4.
 
           Debe coincidir con el patrón: ^G
         </ResponseField>
       </Expandable>
     </ResponseField>
 
-    <ResponseField name="gtm" type="object">
+    <ResponseField name="GTM" type="object">
       Integración con Google Tag Manager.
 
       <Expandable title="Gtm">
         <ResponseField name="tagId" type="string matching ^G" required>
-          Tu ID de Google Tag Manager.
+          Tu id de etiqueta de Google Tag Manager.
 
           Debe coincidir con el patrón: ^G
         </ResponseField>
@@ -871,11 +871,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     </ResponseField>
 
     <ResponseField name="Heap" type="object">
-      Integración con Heap Analytics.
+      Integración de Heap con Analíticas.
 
       <Expandable title="Heap">
         <ResponseField name="appId" type="string" required>
-          Tu ID de aplicación de Heap.
+          El ID de tu aplicación de Heap.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -885,11 +885,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Hotjar">
         <ResponseField name="hjid" type="string" required>
-          Tu ID de Hotjar.
+          Tu id de Hotjar.
         </ResponseField>
 
         <ResponseField name="hjsv" type="string" required>
-          La versión del script de Hotjar.
+          La versión de tu script de Hotjar.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -899,15 +899,15 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Intercom">
         <ResponseField name="appId" type="string" required>
-          Tu ID de la aplicación de Intercom.
+          Tu id de la aplicación de Intercom.
 
           Longitud mínima: 6
         </ResponseField>
       </Expandable>
     </ResponseField>
 
-    <ResponseField name="Koala" type="object">
-      Integración con Koala.
+    <ResponseField name="koala" type="object">
+      Integración de Koala.
 
       <Expandable title="Koala">
         <ResponseField name="publicApiKey" type="string" required>
@@ -923,7 +923,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="LogRocket">
         <ResponseField name="appId" type="string" required>
-          Tu ID de la app de LogRocket.
+          Tu id de la app de LogRocket.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -933,7 +933,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Mixpanel">
         <ResponseField name="projectToken" type="string" required>
-          Tu token del proyecto de Mixpanel.
+          Tu token de proyecto de Mixpanel.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -943,17 +943,17 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Osano">
         <ResponseField name="scriptSource" type="string" required>
-          El origen del script de Osano.
+          El source de tu script de Osano.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
-    <ResponseField name="Pirsch" type="object">
-      Integración de Analytics de Pirsch.
+    <ResponseField name="pirsch" type="object">
+      Integración de Analíticas con Pirsch.
 
       <Expandable title="Pirsch">
         <ResponseField name="id" type="string" required>
-          Tu ID de Pirsch.
+          Tu id de Pirsch.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -963,13 +963,13 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Posthog">
         <ResponseField name="apiKey" type="string matching ^phc\_" required>
-          Tu API key de PostHog.
+          Tu clave de API de PostHog.
 
           Debe coincidir con el patrón: ^phc&#95;
         </ResponseField>
 
         <ResponseField name="apiHost" type="string (uri)">
-          Tu host de API de PostHog.
+          Tu host de la API de PostHog.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -993,17 +993,17 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Segment">
         <ResponseField name="key" type="string" required>
-          Tu key de Segment.
+          Tu clave de Segment.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
-    <ResponseField name="telemetría" type="object">
-      Configuración de telemetría.
+    <ResponseField name="telemetry" type="object">
+      Configuración de telemetry.
 
-      <Expandable title="Telemetría">
+      <Expandable title="Telemetry">
         <ResponseField name="enabled" type="boolean">
-          Indica si se habilita la telemetría.
+          Indica si se habilita la telemetry.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -1013,11 +1013,11 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 
       <Expandable title="Cookies">
         <ResponseField name="key" type="string">
-          key de la cookie.
+          key de las cookies.
         </ResponseField>
 
         <ResponseField name="value" type="string">
-          value de la cookie.
+          Valor de las cookies.
         </ResponseField>
       </Expandable>
     </ResponseField>
@@ -1031,14 +1031,13 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
 <ResponseField name="errors" type="object">
   Configuración del manejo de errores.
 
-  <Expandable title="Errores">
+  <Expandable title="Errors">
     <ResponseField name="404" type="object">
-      Manejo del error 404 &quot;Página no encontrada&quot;.
+      Manejo del error 404 “Page not found”.
 
       <Expandable title="404">
         <ResponseField name="redirect" type="boolean">
-          Indica si se debe redirigir automáticamente a la página de inicio cuando no se
-          encuentre una página.
+          Indica si se debe redirigir automáticamente a la página de inicio cuando no se encuentre una página.
         </ResponseField>
 
         <ResponseField name="title" type="string">
@@ -1103,7 +1102,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             ]
           },
           {
-            "dropdown": "Cambios",
+            "dropdown": "Registro de cambios",
             "icon": "history",
             "description": "Actualizaciones y cambios",
             "pages": [
@@ -1126,7 +1125,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
         ],
         "primary": {
           "type": "button",
-          "label": "Comenzar",
+          "label": "Empezar",
           "href": "https://example.com/start"
         }
       },
@@ -1159,7 +1158,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             "header": "Empresa",
             "items": [
               {
-                "label": "Empleos",
+                "label": "Carreras",
                 "href": "https://example.com/careers"
               },
               {
@@ -1208,7 +1207,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
     ```
   </Tab>
 
-  <Tab title="Ejemplo de API interactivo">
+  <Tab title="Ejemplo interactivo de la API">
     ```json title="docs.json" wrap lines highlight={43-61, 72-79}
     {
       "$schema": "https://mintlify.com/docs.json",
@@ -1272,7 +1271,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
             ]
           },
           {
-            "dropdown": "Cambios",
+            "dropdown": "Registro de cambios",
             "icon": "history",
             "description": "Actualizaciones y cambios",
             "pages": [
@@ -1283,7 +1282,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
       },
       "api": {
         "playground": {
-          "display": "interactive"
+          "display": "interactivo"
         },
         "examples": {
           "languages": ["javascript", "curl", "python"]
@@ -1327,7 +1326,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
                 "href": "https://example.com/enterprise"
               },
               {
-                "label": "Solicitar Vista Previa",
+                "label": "Solicitar vista previa",
                 "href": "https://example.com/preview"
               }
             ]
@@ -1344,7 +1343,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
                 "href": "https://example.com/blog"
               },
               {
-                "label": "Política de Privacidad",
+                "label": "Política de privacidad",
                 "href": "https://example.com/legal/privacy"
               }
             ]
@@ -1405,7 +1404,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
               "href": "https://mintlify.com/docs"
             },
             {
-              "anchor": "Cambios",
+              "anchor": "Registro de cambios",
               "href": "https://mintlify.com/docs/changelog"
             }
           ]
@@ -1438,7 +1437,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
                 ]
               },
               {
-                "dropdown": "Cambios",
+                "dropdown": "Registro de cambios",
                 "icon": "history",
                 "description": "Actualizaciones y cambios",
                 "pages": ["changelog"]
@@ -1454,7 +1453,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
                 "description": "Cómo usar el producto de Example Co.",
                 "pages": [
                   {
-                    "group": "Primeros pasos",
+                    "group": "Comenzando",
                     "pages": ["es/index", "es/quickstart"]
                   },
                   {
@@ -1472,7 +1471,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
                 ]
               },
               {
-                "dropdown": "Cambios",
+                "dropdown": "Registro de cambios",
                 "icon": "history",
                 "description": "Actualizaciones y cambios",
                 "pages": ["es/changelog"]
@@ -1577,7 +1576,7 @@ Esta sección contiene la referencia completa del archivo `docs.json`.
   ## Actualización desde `mint.json`
 </div>
 
-Si tu proyecto de documentación usa el archivo `mint.json` en desuso, sigue estos pasos para actualizar a `docs.json`.
+Si tu proyecto de documentación usa el archivo obsoleto `mint.json`, sigue estos pasos para actualizar a `docs.json`.
 
 <Steps>
   <Step title="Instala o actualiza la CLI">
@@ -1597,7 +1596,7 @@ Si tu proyecto de documentación usa el archivo `mint.json` en desuso, sigue est
       ```
     </CodeGroup>
 
-    Si ya tienes la CLI instalada, asegúrate de que esté actualizada:
+    Si ya tienes instalada la CLI, asegúrate de que esté actualizada:
 
     ```bash
     mint update
@@ -1615,6 +1614,6 @@ Si tu proyecto de documentación usa el archivo `mint.json` en desuso, sigue est
   </Step>
 
   <Step title="Elimina tu archivo mint.json">
-    Después de verificar que tu `docs.json` esté configurado correctamente, puedes eliminar de forma segura tu antiguo archivo `mint.json`.
+    Después de verificar que `docs.json` esté configurado correctamente, puedes eliminar con seguridad tu archivo `mint.json` antiguo.
   </Step>
 </Steps>

@@ -23,20 +23,20 @@ Puedes agregar plataformas de privacidad de datos a tu documentación. Añade el
   ## Consentimiento de cookies y desactivación de la telemetría
 </div>
 
-Si necesitas verificar si un usuario ya ha dado su consentimiento para las cookies para cumplir con el RGPD, puedes especificar una key y un value de almacenamiento local en `cookies`:
+Si necesitas comprobar si un usuario ya ha dado su consentimiento a las cookies para el cumplimiento del RGPD, puedes especificar una key y un valor en el almacenamiento local en `cookies`:
 
 ```json
   "integrations": {
     "cookies": {
-      "key": "CLAVE DE ALMACENAMIENTO LOCAL",
-      "value": "VALOR DE ALMACENAMIENTO LOCAL"
+      "key": "LOCAL STORAGE KEY",
+      "value": "LOCAL STORAGE VALUE"
     }
   }
 ```
 
-Si se establecen estos valores, se comprobará el almacenamiento local para ver si el usuario ha consentido el uso de cookies. Si no lo ha hecho, la telemetría se desactivará.
+Si se establecen estos valores, se comprobará el almacenamiento local para verificar si el usuario ha dado su consentimiento a las cookies. Si no lo ha hecho, se desactivará telemetry.
 
-Si quieres desactivar la telemetría para todos los usuarios, puedes añadir lo siguiente a tu archivo `docs.json`:
+Si deseas desactivar telemetry para todos los usuarios, puedes agregar lo siguiente a tu archivo `docs.json`:
 
 ```json
   "integrations": {

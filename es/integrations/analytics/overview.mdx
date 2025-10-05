@@ -1,9 +1,9 @@
 ---
-title: "Integraciones de Analytics"
-description: "Integra una plataforma de Analytics para rastrear eventos"
+title: "Integraciones de Analíticas"
+description: "Integra una plataforma de analíticas para rastrear eventos"
 ---
 
-Envía automáticamente datos sobre la interacción con tu documentación a tu proveedor de Analytics de terceros.
+Envía automáticamente datos sobre la interacción con tu documentación a tu proveedor de analíticas de terceros.
 
 <div id="all-integrations">
   ## Todas las integraciones
@@ -544,63 +544,63 @@ clip-rule="evenodd"
 </CardGroup>
 
 <div id="enabling-analytics">
-  ## Habilitar Analytics
+  ## Habilitar Analíticas
 </div>
 
-Configura tus keys de Analytics en `docs.json`. Puedes añadir un número ilimitado de integraciones de Analytics de forma gratuita.
+Configura tus claves de analíticas en `docs.json`. Puedes agregar gratis una cantidad ilimitada de integraciones de analíticas.
 
-La sintaxis de `docs.json` se muestra a continuación. Solo necesitas incluir las entradas de las plataformas que deseas conectar.
+La sintaxis de `docs.json` se muestra a continuación. Solo necesitas incluir entradas para las plataformas que quieras conectar.
 
 ```json Analytics options in docs.json
 "integrations": {
     "amplitude": {
-        "apiKey": "obligatorio"
+        "apiKey": "requerido"
     },
     "clearbit": {
-        "publicApiKey": "obligatorio"
+        "publicApiKey": "requerido"
     },
     "cookies": {
-      "key": "obligatorio",
-      "value": "obligatorio"
+      "key": "requerido",
+      "value": "requerido"
     },
     "fathom": {
-        "siteId": "obligatorio"
+        "siteId": "requerido"
     },
     "ga4": {
-        "measurementId": "obligatorio"
+        "measurementId": "requerido"
     },
     "gtm": {
-        "tagId": "obligatorio"
+        "tagId": "requerido"
     },
     "hightouch": {
-        "apiKey": "obligatorio",
+        "apiKey": "requerido",
         "apiHost": "opcional"
     },
     "hotjar": {
-        "hjid": "obligatorio",
-        "hjsv": "obligatorio"
+        "hjid": "requerido",
+        "hjsv": "requerido"
     },
     "koala": {
-        "publicApiKey": "obligatorio"
+        "publicApiKey": "requerido"
     },
     "logrocket": {
-        "appId": "obligatorio"
+        "appId": "requerido"
     },
     "mixpanel": {
-        "projectToken": "obligatorio"
+        "projectToken": "requerido"
     },
     "pirsch": {
-        "id": "obligatorio"
+        "id": "requerido"
     },
     "plausible": {
-        "domain": "obligatorio"
+        "domain": "requerido"
     },
     "posthog": {
-        "apiKey": "obligatorio",
+        "apiKey": "requerido",
         "apiHost": "opcional"
     },
     "segment": {
-      "key": "obligatorio"
+      "key": "requerido"
     },
     "telemetry": {
       "enabled": "booleano"
@@ -609,36 +609,36 @@ La sintaxis de `docs.json` se muestra a continuación. Solo necesitas incluir la
 ```
 
 <div id="analytics-events">
-  ## Eventos de Analytics
+  ## Eventos de Analíticas
 </div>
 
-Enviamos los siguientes eventos a tu proveedor de Analytics. Todos los eventos usan el prefijo `docs.`.
+Enviamos los siguientes eventos a tu proveedor de analíticas. Todos los eventos usan el prefijo `docs.`.
 
-| Nombre del evento                       | Descripción                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.accordion.close`                  | Cuando un usuario cierra un Accordion.                                                                    |
-| `docs.accordion.open`                   | Cuando un usuario abre un Accordion.                                                                      |
-| `docs.api_playground.request`           | Cuando un usuario realiza una llamada a una API en el área de pruebas de la API.                          |
-| `docs.code_block.copy`                  | Cuando un usuario copia código de un bloque de código.                                                    |
-| `docs.code_block.ask_ai`                | Cuando un usuario le pide al assistant que explique un bloque de código.                                  |
-| `docs.content.view`                     | Cuando un usuario ve una página. Solo disponible para proveedores de Analytics que no rastrean vistas de página de forma predeterminada. |
-| `docs.feedback.thumbs_up`               | Cuando un usuario hace clic en el botón de valoración positiva.                                           |
-| `docs.feedback.thumbs_down`             | Cuando un usuario hace clic en el botón de valoración negativa.                                           |
-| `docs.navitem.cta_click`                | Cuando un usuario hace clic en una llamada a la acción.                                                   |
-| `docs.expandable.close`                 | Cuando un usuario cierra un elemento expandible.                                                          |
-| `docs.expandable.open`                  | Cuando un usuario abre un elemento expandible.                                                            |
-| `docs.navitem.click`                    | Cuando un usuario hace clic en un elemento de navigation del encabezado.                                  |
-| `docs.footer.powered_by_mintlify_click` | Cuando un usuario hace clic en el enlace &quot;Powered by Mintlify&quot;.                                           |
-| `docs.assistant.source_click`           | Cuando un usuario hace clic en una cita en un chat.                                                       |
-| `docs.assistant.suggestion_click`       | Cuando un usuario hace clic en una sugerencia en un chat.                                                 |
-| `docs.assistant.thumbs_up`              | Cuando un usuario hace clic en el botón de valoración positiva en un chat.                                |
-| `docs.assistant.thumbs_down`            | Cuando un usuario hace clic en el botón de valoración negativa en un chat.                                |
-| `docs.assistant.completed`              | Cuando se completa una sesión de chat.                                                                    |
-| `docs.assistant.enter`                  | Cuando un usuario inicia un chat.                                                                         |
-| `docs.assistant.shared`                 | Cuando un usuario comparte una conversación de chat.                                                      |
-| `docs.search.close`                     | Cuando un usuario cierra la barra de búsqueda.                                                            |
-| `docs.search.result_click`              | Cuando un usuario hace clic en un resultado de búsqueda.                                                  |
-| `docs.context_menu.copy_page`           | Cuando un usuario copia la página actual como Markdown.                                                   |
-| `docs.context_menu.copy_mcp_link`       | Cuando un usuario copia el enlace del servidor MCP alojado.                                               |
-| `docs.context_menu.ai_provider_click`   | Cuando un usuario hace clic en un proveedor de IA y crea una conversación con la página actual como contexto. |
-| `docs.context_menu.install_mcp_server`  | Cuando un usuario instala el servidor MCP alojado en editores de código.                                  |
+| Event name                              | Description                                                                                                         |
+| :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
+| `docs.accordion.close`                  | Cuando un usuario cierra un Accordion.                                                                              |
+| `docs.accordion.open`                   | Cuando un usuario abre un Accordion.                                                                                |
+| `docs.api_playground.request`           | Cuando un usuario invoca una API en el API playground.                                                              |
+| `docs.code_block.copy`                  | Cuando un usuario copia código de un bloque de código.                                                              |
+| `docs.code_block.ask_ai`                | Cuando un usuario le pide al asistente que explique un bloque de código.                                            |
+| `docs.content.view`                     | Cuando un usuario visualiza una página. Solo disponible para proveedores de analíticas que no registran vistas por defecto. |
+| `docs.feedback.thumbs_up`               | Cuando un usuario hace clic en el botón de valoración positiva.                                                     |
+| `docs.feedback.thumbs_down`             | Cuando un usuario hace clic en el botón de valoración negativa.                                                     |
+| `docs.navitem.cta_click`                | Cuando un usuario hace clic en un llamado a la acción (CTA).                                                        |
+| `docs.expandable.close`                 | Cuando un usuario cierra un Expandable.                                                                             |
+| `docs.expandable.open`                  | Cuando un usuario abre un Expandable.                                                                               |
+| `docs.navitem.click`                    | Cuando un usuario hace clic en un elemento de navegación del Header.                                                |
+| `docs.footer.powered_by_mintlify_click` | Cuando un usuario hace clic en el enlace &quot;Powered by Mintlify&quot;.                                                     |
+| `docs.assistant.source_click`           | Cuando un usuario hace clic en una cita en un chat.                                                                 |
+| `docs.assistant.suggestion_click`       | Cuando un usuario hace clic en una sugerencia en un chat.                                                           |
+| `docs.assistant.thumbs_up`              | Cuando un usuario hace clic en el botón de valoración positiva en un chat.                                          |
+| `docs.assistant.thumbs_down`            | Cuando un usuario hace clic en el botón de valoración negativa en un chat.                                          |
+| `docs.assistant.completed`              | Cuando se completa una sesión de chat.                                                                              |
+| `docs.assistant.enter`                  | Cuando un usuario inicia un chat.                                                                                   |
+| `docs.assistant.shared`                 | Cuando un usuario comparte una conversación de chat.                                                                |
+| `docs.search.close`                     | Cuando un usuario cierra la barra de búsqueda.                                                                      |
+| `docs.search.result_click`              | Cuando un usuario hace clic en un resultado de búsqueda.                                                            |
+| `docs.context_menu.copy_page`           | Cuando un usuario copia la página actual como Markdown.                                                             |
+| `docs.context_menu.copy_mcp_link`       | Cuando un usuario copia el enlace del servidor MCP alojado.                                                         |
+| `docs.context_menu.ai_provider_click`   | Cuando un usuario hace clic en un proveedor de IA y crea una conversación con la página actual como contexto.       |
+| `docs.context_menu.install_mcp_server`  | Cuando un usuario instala el servidor MCP alojado en editores de código.                                            |

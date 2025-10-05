@@ -2,23 +2,23 @@
 title: "Osano"
 ---
 
-Añade lo siguiente a tu archivo `docs.json` para incorporar el gestor de consentimiento de cookies [Osano](https://www.osano.com/).
+Agrega lo siguiente a tu archivo `docs.json` para incorporar el gestor de consentimiento de cookies [Osano](https://www.osano.com/).
 
 <CodeGroup>
-  ```json Opciones de integración en docs.json
+  ```json Integration options in docs.json
   "integrations": {
       "osano": "SOURCE"
   }
   ```
 
-  ```json Ejemplo
+  ```json Example
   "integrations": {
       "osano": "https://cmp.osano.com/2sUB2dqwqdkks/8dqwd-dwd86£-4a9b/osano.js"
   }
   ```
 </CodeGroup>
 
-El `SOURCE` se obtiene del valor `src` en el fragmento de código generado por Osano. Siempre comienza con `https://cmp.osano.com/`.
+El valor de `SOURCE` se encuentra como `src` en el fragmento de código generado por Osano. Siempre comienza con `https://cmp.osano.com/`.
 
 ```html Code snippet from Osano
 <script src="https://cmp.osano.com/placeholder/placeholder/osano.js"/>
@@ -30,9 +30,9 @@ El `SOURCE` se obtiene del valor `src` en el fragmento de código generado por O
 </div>
 
 <Accordion
-  title="Las páginas no cargan con el modo de cumplimiento Strict"
+  title="Las páginas no cargan con el modo de cumplimiento Estricto"
 >
-  Si tus páginas de documentación no se cargan correctamente al usar el modo de cumplimiento **Strict** de Osano, debes permitir el domain de Mintlify para que se carguen las imágenes y otros recursos.
+  Si las páginas de tu documentación no se cargan correctamente cuando usas el modo de cumplimiento **Strict** de Osano, deberás incluir el domain de Mintlify en la lista de permitidos para que se carguen las imágenes y otros recursos.
 
   <Steps>
     <Step title="Ir a Managed Rules">
@@ -47,7 +47,7 @@ El `SOURCE` se obtiene del valor `src` en el fragmento de código generado por O
       </Frame>
 
       <Info>
-      Esto garantiza que todos los recursos servidos por Mintlify (incluidas las imágenes, las hojas de estilo y otros recursos de la documentación) se traten como esenciales y se carguen incluso cuando Osano bloquee contenido de terceros sin categorizar.
+      Esto garantiza que todos los recursos servidos por Mintlify (incluidas las imágenes, las hojas de estilo y otros recursos de la documentación) se traten como esenciales y se carguen incluso cuando Osano bloquee content de terceros sin categorizar.
       </Info>
     </Step>
   </Steps>

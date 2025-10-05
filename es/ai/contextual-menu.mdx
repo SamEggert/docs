@@ -1,19 +1,19 @@
 ---
 title: "Menú contextual"
-description: "Añade integraciones de IA con un solo clic a tu documentación"
+description: "Agrega integraciones de IA con un solo clic a tu documentación"
 ---
 
 import { PreviewButton } from "/snippets/previewbutton.jsx"
 import IconsRequired from "/snippets/es/icons-required.mdx";
 
-El menú contextual ofrece acceso rápido a contenido optimizado con IA e integraciones directas con herramientas de IA populares. Cuando los usuarios abren el menú contextual en cualquier página, pueden copiar contenido como contexto para herramientas de IA o iniciar conversaciones en ChatGPT, Claude, Perplexity o en una herramienta personalizada de su elección, con su documentación ya cargada como contexto.
+El menú contextual ofrece acceso rápido a contenido optimizado con IA e integraciones directas con herramientas de IA populares. Al seleccionar el menú contextual en cualquier página, los usuarios pueden copiar el contenido como contexto para herramientas de IA o abrir conversaciones en ChatGPT, Claude, Perplexity o en una herramienta personalizada de su elección, con su documentación ya cargada como contexto.
 
 
 <div id="menu-options">
   ## Opciones del menú
 </div>
 
-El menú contextual incluye varias opciones preconfiguradas que puedes habilitar agregando su identificador a tu configuración.
+El menú contextual incluye varias opciones predeterminadas que puedes habilitar agregando su identificador a tu configuración.
 
 | Opción | Identificador | Descripción |
 |:--------|:------------|:-------------|
@@ -64,17 +64,17 @@ Añade el campo `contextual` a tu archivo `docs.json` y especifica qué opciones
 Crea opciones personalizadas en el menú contextual agregando un objeto al arreglo `options`. Cada opción personalizada requiere estas propiedades:
 
 <ResponseField name="title" type="string" required>
-  El título de la opción.
+  El Título de la opción.
 </ResponseField>
 
 <ResponseField name="description" type="string" required>
-  La descripción de la opción. Se muestra debajo del título cuando se expande el menú contextual.
+  La [objeto Objeto] de la opción. Se muestra debajo del Título cuando se expande el menú contextual.
 </ResponseField>
 
 <IconsRequired />
 
 <ResponseField name="href" type="string | object" required>
-  El href de la opción. Usa una cadena para enlaces simples o un objeto para enlaces dinámicos con parámetros de búsqueda.
+  El href de la opción. Usa una cadena para enlaces simples o un objeto para enlaces dinámicos con parámetros de consulta.
 
   <Expandable title="href object">
     <ResponseField name="base" type="string" required>
@@ -82,15 +82,15 @@ Crea opciones personalizadas en el menú contextual agregando un objeto al arreg
     </ResponseField>
 
     <ResponseField name="query" type="object" required>
-      Los parámetros de búsqueda de la opción.
+      Los parámetros de consulta de la opción.
 
       <Expandable title="query object">
         <ResponseField name="key" type="string" required>
-          La key del parámetro de búsqueda.
+          La key del parámetro de consulta.
         </ResponseField>
 
         <ResponseField name="value" type="string" required>
-          El value del parámetro de búsqueda. Reemplazaremos los siguientes marcadores de posición por los valores correspondientes:
+          El valor del parámetro de consulta. Reemplazaremos los siguientes marcadores por los valores correspondientes:
 
           * Usa `$page` para insertar el contenido de la página actual en Markdown.
           * Usa `$path` para insertar la ruta de la página actual.

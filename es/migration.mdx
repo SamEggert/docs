@@ -3,7 +3,7 @@ title: "Migraciones"
 description: "Cómo migrar la documentación desde tu plataforma actual"
 ---
 
-Esta guía te ayuda a trasladar tu documentación a Mintlify. Elige la migración automatizada para las plataformas compatibles o la migración manual para tener control total del proceso.
+Esta guía te ayuda a trasladar tu documentación existente a Mintlify. Elige la migración automatizada para plataformas compatibles o la migración manual para tener control total del proceso.
 
 <div id="choose-your-migration-path">
   ## Elige tu ruta de migración
@@ -11,11 +11,11 @@ Esta guía te ayuda a trasladar tu documentación a Mintlify. Elige la migració
 
 <CardGroup cols="2">
   <Card title="Migración automatizada" icon="wand-sparkles">
-    Si estás migrando desde Docusaurus, ReadMe o GitBook, usa nuestras herramientas para automatizar la migración.
+    Si migras desde Docusaurus, ReadMe o GitBook, usa nuestras herramientas para automatizar la migración.
   </Card>
 
   <Card title="Migración manual" icon="pencil-ruler">
-    Si estás migrando desde cualquier otra plataforma, sigue nuestra guía para migrar tu contenido.
+    Si migras desde cualquier otra plataforma, sigue nuestra guía para migrar tu contenido.
   </Card>
 </CardGroup>
 
@@ -146,17 +146,17 @@ Esta guía te ayuda a trasladar tu documentación a Mintlify. Elige la migració
     mintlify-scrape page https://your-docs-site.com/docs/getting-started
     ```
 
-    **Migrar especificaciones de OpenAPI:**
+    **Migrar especificaciones OpenAPI:**
 
     ```bash
-    mintlify-scrape openapi-file [nombreArchivoOpenApi]
+    mintlify-scrape openapi-file [openApiFilename]
     ```
 
     ### Añade contenido preparado a tu proyecto de Mintlify
 
     Después de extraer el contenido de tu plataforma de documentación existente, estás listo para crear tu documentación en Mintlify.
 
-    Confirma que todas tus páginas han sido migradas y luego añade estos archivos al repositorio de documentación que creaste durante el proceso de configuración inicial. Normalmente se trata de un repositorio de GitHub.
+    Confirma que todas tus páginas han sido migradas y luego agrega estos archivos al repositorio de documentación que creaste durante el proceso de incorporación. Esto suele ser un repositorio de GitHub.
   </Tab>
 
   <Tab title="Migración manual">
@@ -166,20 +166,20 @@ Esta guía te ayuda a trasladar tu documentación a Mintlify. Elige la migració
 
     Para migrar tu contenido a Mintlify, necesitarás:
 
-    * Un `docs.json` válido para la configuración de tu sitio y la navegación. Consulta [Configuración global](/es/organize/settings) y [Navegación](/es/organize/navigation) para más información.
-    * Un archivo `MDX` para cada página de tu documentación. Consulta [Páginas](/es/organize/pages) para más información.
-    * (Opcional) Una especificación OpenAPI para las páginas de endpoints de tu API. Consulta [Configuración de OpenAPI](/es/api-playground/openapi-setup) para más información.
+    * Un `docs.json` válido para la configuración de tu sitio y la navegación. Consulta [Configuración global](/es/organize/settings) y [Navegación](/es/organize/navigation) para obtener más información.
+    * Un archivo `MDX` para cada página de tu documentación. Consulta [Páginas](/es/organize/pages) para obtener más información.
+    * (Opcional) Una especificación de OpenAPI para las páginas de tu endpoint de API. Consulta [Configuración de OpenAPI](/es/api-playground/openapi-setup) para obtener más información.
 
     1. Si tu contenido ya está en formato `MDX`, copia las páginas a tu proyecto de Mintlify. De lo contrario, convierte tu contenido al formato `MDX`.
     2. Crea tu `docs.json` haciendo referencia a las rutas de tus páginas `MDX`.
-    3. Si tienes especificaciones OpenAPI, agrégalas a tu `docs.json` y configura el área de pruebas de la API.
+    3. Si tienes especificaciones de OpenAPI, agrégalas a tu `docs.json` y configura el API playground.
 
-    ### Migración de recursos
+    ### Migración de assets
 
-    1. Copia los recursos al directorio `images/` de tu repositorio.
+    1. Copia los assets en el directorio `images/` de tu repository.
     2. Actualiza las referencias en tus archivos `MDX`:
        ```mdx
-       ![Alt text](/images/screenshot.png)
+       ![Texto alternativo](/images/screenshot.png)
        ```
   </Tab>
 </Tabs>
@@ -188,12 +188,12 @@ Esta guía te ayuda a trasladar tu documentación a Mintlify. Elige la migració
   ## Lista de verificación posterior a la migración
 </div>
 
-Después de completar tu migración (automatizada o manual), te recomendamos verificar:
+Después de completar tu migración (automatizada o manual), te recomendamos comprobar:
 
 * Todas las páginas se renderizan
-* La navigation funciona como se espera
+* La navegación funciona como se espera
 * Los enlaces internos se resuelven correctamente
-* Las imágenes y los recursos se cargan correctamente
+* Las imágenes y los recursos cargan correctamente
 * Los bloques de código se muestran con el resaltado de sintaxis adecuado
 * La búsqueda funciona
 * La implementación está configurada

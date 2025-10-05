@@ -9,13 +9,13 @@ Cuando cambias la ruta de un archivo en tu carpeta de docs, también cambia la r
   ## Enlaces rotos
 </div>
 
-Detecta enlaces rotos con nuestra CLI. [Instala la CLI](/es/installation) y ejecuta el comando:
+Detecta enlaces rotos con nuestra CLI. [Instala la CLI](/es/installation) y ejecuta el siguiente comando:
 
 ```bash
-mint enlaces-rotos
+mint broken-links
 ```
 
-La CLI identifica cualquier enlace relativo en tu documentación que no exista.
+La CLI detecta cualquier enlace relativo inexistente en tu documentación.
 
 <div id="redirects">
   ## Redirecciones
@@ -26,20 +26,20 @@ Configura redirecciones 301 añadiendo el campo `redirects` a tu archivo `docs.j
 ```json
 "redirects": [
   {
-    "source": "/source/path",
-    "destination": "/destination/path"
+    "source": "/ruta/fuente",
+    "destination": "/ruta/destino"
   }
 ]
 ```
 
 Esto redirige de forma permanente `/source/path` a `/destination/path` para que no pierdas el SEO acumulado de la página original.
 
-Para hacer coincidir una ruta con comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y la redirige a `/v2/introduction`.
+Para hacer coincidir una ruta con comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y lo redirige a `/v2/introduction`.
 
 ```json
 "redirects": [
   {
-    "source": "/beta/:slug*",
+    "fuente": "/beta/:slug*",
     "destination": "/v2/:slug*"
   }
 ]

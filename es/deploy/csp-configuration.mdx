@@ -1,27 +1,27 @@
 ---
 title: "Configuración de Content Security Policy (CSP)"
 sidebarTitle: "Configuración de CSP"
-description: "Lista de permitidos de domain y configuraciones de encabezados para proxies inversos, firewalls y redes que aplican políticas de seguridad estrictas"
+description: "Lista de permitidos de dominios y configuraciones de Header para proxies inversos, cortafuegos y redes que aplican políticas de seguridad estrictas"
 ---
 
-Content Security Policy (CSP) es un estándar de seguridad que ayuda a prevenir ataques de cross-site scripting (XSS) al controlar qué recursos puede cargar una página web. Mintlify ofrece una CSP predeterminada que protege a la mayoría de los sitios. Si alojas tu documentación detrás de un proxy inverso o firewall que sobrescribe la CSP predeterminada, es posible que debas configurar los encabezados de CSP para que las funciones se comporten correctamente.
+Content Security Policy (CSP) es un estándar de seguridad que ayuda a prevenir ataques de cross-site scripting (XSS) controlando qué recursos puede cargar una página web. Mintlify sirve una CSP predeterminada que protege a la mayoría de los sitios. Si alojas tu documentación detrás de un proxy inverso o cortafuegos que sobrescribe la CSP predeterminada, es posible que debas configurar los Header de CSP para que las funciones operen correctamente.
 
 <div id="csp-directives">
   ## Directivas CSP
 </div>
 
-Las siguientes directivas de CSP se utilizan para controlar qué recursos se pueden cargar:
+Las siguientes directivas CSP se utilizan para controlar qué recursos se pueden cargar:
 
 - `script-src`: Controla qué scripts se pueden ejecutar
 - `style-src`: Controla qué hojas de estilo se pueden cargar
-- `font-src`: Controla qué fuentes se pueden cargar
+- `font-src`: Controla qué fuentes tipográficas se pueden cargar
 - `img-src`: Controla qué imágenes, iconos y logotipos se pueden cargar
-- `connect-src`: Controla a qué URL se puede conectar para llamadas a la API y conexiones WebSocket
+- `connect-src`: Controla con qué URL se puede establecer conexión para llamadas a la API y conexiones WebSocket
 - `frame-src`: Controla qué URL se pueden incrustar en frames o iframes
-- `default-src`: Valor predeterminado para otras directivas cuando no se establece explícitamente
+- `default-src`: Valor por defecto para otras directivas cuando no se establece explícitamente
 
 <div id="domain-whitelist">
-  ## Lista de permitidos de dominios
+  ## Lista de dominios permitidos
 </div>
 
 | Dominio | Propósito | Directiva CSP | Obligatorio |
@@ -29,24 +29,24 @@ Las siguientes directivas de CSP se utilizan para controlar qué recursos se pue
 | `d4tuoctqmanu0.cloudfront.net` | CSS y fuentes de KaTeX | `style-src`, `font-src` | Obligatorio |
 | `*.mintlify.dev` | Contenido de la documentación | `connect-src`, `frame-src` | Obligatorio |
 | `*.mintlify.com` | Dashboard, API, proxy de Analytics | `connect-src` | Obligatorio |
-| `leaves.mintlify.com` | API del assistant | `connect-src` | Obligatorio |
+| `leaves.mintlify.com` | API del asistente | `connect-src` | Obligatorio |
 | `d3gk2c5xim1je2.cloudfront.net` | Iconos, imágenes, logotipos | `img-src` | Obligatorio |
 | `d1ctpt7j8wusba.cloudfront.net` | Archivos de versión y lanzamiento de Mint | `connect-src` | Obligatorio |
 | `mintcdn.com` | Imágenes, favicons | `img-src`, `connect-src` | Obligatorio |
 | `*.mintcdn.com` | Imágenes, favicons | `img-src`, `connect-src` | Obligatorio |
 | `api.mintlifytrieve.com` | API de búsqueda | `connect-src` | Obligatorio |
-| `cdn.jsdelivr.net` | Recursos de emoji para imágenes OG | `script-src`, `img-src` | Obligatorio |
+| `cdn.jsdelivr.net` | Recursos de emojis para imágenes OG | `script-src`, `img-src` | Obligatorio |
 | `fonts.googleapis.com` | Google Fonts | `style-src`, `font-src` | Opcional |
 | `www.googletagmanager.com` | Google Analytics/GTM | `script-src`, `connect-src` | Opcional |
-| `cdn.segment.com` | Segment Analytics | `script-src`, `connect-src` | Opcional |
-| `plausible.io` | Plausible Analytics | `script-src`, `connect-src` | Opcional |
-| `us.posthog.com` | PostHog Analytics | `connect-src` | Opcional |
-| `cdn.getkoala.com` | Koala Analytics | `script-src` | Opcional |
+| `cdn.segment.com` | Analytics de Segment | `script-src`, `connect-src` | Opcional |
+| `plausible.io` | Analytics de Plausible | `script-src`, `connect-src` | Opcional |
+| `us.posthog.com` | Analytics de PostHog | `connect-src` | Opcional |
+| `cdn.getkoala.com` | Analytics de Koala | `script-src` | Opcional |
 | `tag.clearbitscripts.com` | Seguimiento de Clearbit | `script-src` | Opcional |
-| `cdn.heapanalytics.com` | Heap Analytics | `script-src` | Opcional |
+| `cdn.heapanalytics.com` | Analytics de Heap | `script-src` | Opcional |
 | `chat.cdn-plain.com` | Widget de chat de Plain | `script-src` | Opcional |
 | `chat-assets.frontapp.com` | Widget de chat de Front | `script-src` | Opcional |
-| `browser.sentry-cdn.com` | Seguimiento de errores de Sentry | `script-src`, `connect-src` | Opcional |
+| `browser.sentry-cdn.com` | Monitoreo de errores de Sentry | `script-src`, `connect-src` | Opcional |
 | `js.sentry-cdn.com` | SDK de JavaScript de Sentry | `script-src` | Opcional |
 
 <div id="example-csp-configuration">
@@ -54,7 +54,7 @@ Las siguientes directivas de CSP se utilizan para controlar qué recursos se pue
 </div>
 
 <Note>
-  Incluye únicamente los domains de los servicios que utilices. Elimina cualquier domain de Analytics que no hayas configurado para tu documentación.
+  Incluye únicamente los domains de los servicios que uses. Elimina cualquier domain de Analytics que no hayas configurado para tu documentación.
 </Note>
 
 ```text wrap
@@ -76,7 +76,7 @@ frame-src 'self' *.mintlify.dev;
   ## Configuraciones comunes por tipo de proxy
 </div>
 
-La mayoría de los servidores proxy inversos permiten agregar encabezados personalizados.
+La mayoría de los proxies inversos admiten agregar Headers personalizados.
 
 <div id="cloudflare-configuration">
   ### Configuración de Cloudflare
@@ -85,7 +85,7 @@ La mayoría de los servidores proxy inversos permiten agregar encabezados person
 Crea una regla de transformación de encabezados de respuesta:
 
 1. En tu dashboard de Cloudflare, ve a **Rules > Overview**.
-2. Selecciona **Create rule > Response Header Transform Rule**.
+2. Selecciona **Create rule > Response Header Transform Rule**. 
 3. Configura la regla:
 
 - **Modify response header**: Set static
@@ -101,7 +101,7 @@ Crea una regla de transformación de encabezados de respuesta:
   ### Configuración de AWS CloudFront
 </div>
 
-Agrega una política de encabezados de respuesta en CloudFront:
+Agrega una política de Headers de respuesta en CloudFront:
 
 ```json
 {
@@ -124,7 +124,7 @@ Agrega una política de encabezados de respuesta en CloudFront:
   ### Configuración de Vercel
 </div>
 
-Agrega en tu `vercel.json`:
+Agrega lo siguiente a tu `vercel.json`:
 
 ```json
 {
@@ -147,11 +147,11 @@ Agrega en tu `vercel.json`:
   ## Solución de problemas
 </div>
 
-Identifica infracciones de la CSP en la consola de tu navegador:
+Identifica infracciones de CSP en la consola de tu navegador:
 
 1. Abre las herramientas de desarrollador de tu navegador.
 2. Ve a la pestaña **Console**.
-3. Busca errores que empiecen por:
+3. Busca errores que comiencen con:
     - `Content Security Policy: The page's settings blocked the loading of a resource`
     - `Refused to load the script/stylesheet because it violates the following Content Security Policy directive`
     - `Refused to connect to because it violates the following Content Security Policy directive`

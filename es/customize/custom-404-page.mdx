@@ -1,17 +1,17 @@
 ---
 title: "Página 404 personalizada"
-description: "Personaliza el título y la descripción de tu página de error 404"
+description: "Personaliza el Título y la description de tu página de error 404"
 ---
 
-Puedes controlar el título y la descripción de la página de error 404 que aparece cuando los usuarios llegan a enlaces rotos o inexistentes.
+Puedes controlar el Título y la description de la página de error 404 que aparece cuando los usuarios llegan a enlaces rotos o inexistentes.
 
-Al personalizar tu página 404, usa la descripción para orientar a los usuarios hacia recursos útiles o enlaces en tu documentación que les ayuden a encontrar lo que buscan.
+Al personalizar tu página 404, usa la description para orientar a los usuarios hacia recursos útiles o enlaces en tu documentación que puedan ayudarlos a encontrar lo que buscan.
 
 <div id="configuration">
   ## Configuración
 </div>
 
-Configura la página 404 en la sección `errors.404` de tu archivo `docs.json`:
+Configura tu página 404 en la sección `errors.404` de tu archivo `docs.json`:
 
 ```json
 "errors": {
@@ -29,7 +29,7 @@ Configura la página 404 en la sección `errors.404` de tu archivo `docs.json`:
 </div>
 
 <ResponseField name="redirect" type="boolean">
-  Si se debe redirigir automáticamente a la página de inicio cuando no se encuentra una página.
+  Indica si se debe redirigir automáticamente a la página de inicio cuando no se encuentra una página.
   
   Configúralo en `true` para redirigir a la página de inicio.
 
@@ -37,9 +37,9 @@ Configura la página 404 en la sección `errors.404` de tu archivo `docs.json`:
 </ResponseField>
 
 <ResponseField name="title" type="string">
-  Título personalizado para la página de error 404. Reemplaza el encabezado predeterminado “Page not found”.
+  Título personalizado para la página de error 404. Reemplaza el encabezado predeterminado "Page not found".
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Descripción personalizada para la página de error 404. Admite formato Markdown.
+  description personalizada para la página de error 404. Admite formato Markdown.
 </ResponseField>

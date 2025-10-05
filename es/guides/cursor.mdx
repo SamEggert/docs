@@ -1,34 +1,34 @@
 ---
 title: "Cursor"
-description: "Configura Cursor para que sea tu assistant de escritura"
+description: "Configura Cursor como tu asistente de redacción"
 ---
 
-Convierte a Cursor en un experto en documentación que conozca tus componentes, tu guía de estilo y tus mejores prácticas.
+Convierte Cursor en un experto en documentación que conozca tus components, tu guía de estilo y tus mejores prácticas.
 
 <div id="using-cursor-with-mintlify">
   ## Uso de Cursor con Mintlify
 </div>
 
-Las reglas de Cursor proporcionan contexto persistente sobre tu documentación y garantizan sugerencias más coherentes que se ajusten a tus estándares y estilo.
+Las reglas de Cursor proporcionan contexto persistente sobre tu documentación, lo que garantiza sugerencias más coherentes y alineadas con tus estándares y estilo.
 
 * **Reglas de proyecto** se almacenan en el repositorio de tu documentación y se comparten con tu equipo.
 * **Reglas de usuario** se aplican a tu entorno personal de Cursor.
 
-Recomendamos crear reglas de proyecto para tu documentación, de modo que todas las personas colaboradoras tengan acceso a las mismas reglas.
+Recomendamos crear reglas de proyecto para tu documentación para que todos los colaboradores tengan acceso a las mismas reglas.
 
-Crea archivos de reglas en el directorio `.cursor/rules` de tu repositorio de documentación. Consulta la [documentación de Cursor Rules](https://docs.cursor.com/context/rules) para obtener instrucciones completas de configuración.
+Crea archivos de reglas en el directorio `.cursor/rules` de tu repositorio de documentación. Consulta la [documentación de reglas de Cursor](https://docs.cursor.com/context/rules) para ver las instrucciones completas de configuración.
 
 <div id="example-project-rule">
-  ## Regla de ejemplo para el proyecto
+  ## Regla de proyecto de ejemplo
 </div>
 
-Esta regla proporciona a Cursor el contexto necesario para formatear correctamente los componentes de Mintlify y seguir las mejores prácticas de redacción técnica.
+Esta regla proporciona a Cursor el contexto para formatear correctamente los components de Mintlify y seguir las mejores prácticas de redacción técnica.
 
 Puedes usar este ejemplo tal cual o personalizarlo para tu documentación:
 
-* **Estándares de redacción**: Actualiza las pautas de idioma para alinearlas con tu guía de estilo.
-* **Patrones de componentes**: Agrega componentes específicos del proyecto o modifica los ejemplos existentes.
-* **Ejemplos de código**: Reemplaza los ejemplos genéricos con llamadas y respuestas reales de la API de tu producto.
+* **Estándares de redacción**: Actualiza las pautas de lenguaje para alinearlas con tu guía de estilo.
+* **Patrones de componentes**: Agrega components específicos del proyecto o modifica los ejemplos existentes.
+* **Ejemplos de código**: Reemplaza los ejemplos genéricos con llamadas y respuestas reales de la API para tu producto.
 * **Preferencias de estilo y tono**: Ajusta la terminología, el formato y otras reglas.
 
 Agrega esta regla, con las modificaciones que necesites, como un archivo `.mdc` en el directorio `.cursor/rules` de tu repositorio de documentación.
@@ -46,7 +46,7 @@ Eres un asistente de escritura de IA especializado en crear documentación técn
 - Escribe en segunda persona ("tú") para instrucciones y procedimientos
 - Usa voz activa en lugar de voz pasiva
 - Emplea tiempo presente para estados actuales, tiempo futuro para resultados
-- Evita la jerga a menos que sea necesaria y define términos cuando se usen por primera vez
+- Evita la jerga a menos que sea necesaria y define los términos cuando se usen por primera vez
 - Mantén terminología consistente a lo largo de toda la documentación
 - Mantén las oraciones concisas mientras proporcionas el contexto necesario
 - Usa estructura paralela en listas, encabezados y procedimientos
@@ -77,25 +77,25 @@ Eres un asistente de escritura de IA especializado en crear documentación técn
 
 ### Componentes de llamada
 
-#### Note - Información adicional útil
+#### Nota - Información adicional útil
 
 <Note>
 Información complementaria que apoya el contenido principal sin interrumpir el flujo
 </Note>
 
-#### Tip - Mejores prácticas y consejos profesionales
+#### Sugerencia - Mejores prácticas y consejos profesionales
 
 <Tip>
 Consejos de expertos, atajos o mejores prácticas que mejoran el éxito del usuario
 </Tip>
 
-#### Warning - Precauciones importantes
+#### Advertencia - Precauciones importantes
 
 <Warning>
 Información crítica sobre problemas potenciales, cambios disruptivos o acciones destructivas
 </Warning>
 
-#### Info - Información contextual neutral
+#### Información - Información contextual neutral
 
 <Info>
 Información de fondo, contexto o anuncios neutrales
@@ -192,7 +192,7 @@ Ejemplo de instrucciones paso a paso:
   ```
   
   <Warning>
-  Nunca confirmes claves de API en el control de versiones.
+  Nunca hagas commit de claves de API al control de versiones.
   </Warning>
 </Step>
 </Steps>
@@ -245,9 +245,9 @@ Ejemplo de grupos de acordeón:
 </Accordion>
 </AccordionGroup>
 
-### Tarjetas y columnas para enfatizar información
+### Cards y columnas para enfatizar información
 
-Ejemplo de tarjetas y grupos de tarjetas:
+Ejemplo de cards y grupos de cards:
 
 <Card title="Guía de inicio" icon="rocket" href="/quickstart">
 Recorrido completo desde la instalación hasta tu primera llamada de API en menos de 10 minutos.
@@ -329,14 +329,14 @@ Objeto de usuario completo con todos los datos asociados.
 
 #### Frames para imágenes
 
-Envuelve todas las imágenes en marcos:
+Envuelve todas las imágenes en frames:
 
 <Frame>
-<img src="/images/dashboard.png" alt="Panel principal mostrando resumen de analytics" />
+<img src="/images/dashboard.png" alt="Dashboard principal mostrando resumen de analíticas" />
 </Frame>
 
-<Frame caption="El panel de analytics proporciona información en tiempo real">
-<img src="/images/analytics.png" alt="Panel de analytics con gráficos" />
+<Frame caption="El dashboard de analíticas proporciona información en tiempo real">
+<img src="/images/analytics.png" alt="Dashboard de analíticas con gráficos" />
 </Frame>
 
 #### Videos
@@ -370,14 +370,14 @@ API
 
 #### Updates
 
-Usa updates para changelogs:
+Usa updates para registros de cambios:
 
-<Update label="Versión 2.1.0" description="Lanzado el 15 de marzo de 2024">
+<Update label="Versión 2.1.0" description="Lanzada el 15 de marzo de 2024">
 ## Nuevas características
 - Se agregó funcionalidad de importación masiva de usuarios
 - Se mejoraron los mensajes de error con sugerencias accionables
 
-## Corrección de errores
+## Correcciones de errores
 - Se corrigió el problema de paginación con conjuntos de datos grandes
 - Se resolvieron problemas de tiempo de espera de autenticación
 </Update>
@@ -389,7 +389,7 @@ Cada página de documentación debe comenzar con frontmatter YAML:
 ```yaml
 ---
 title: "Título claro, específico y rico en palabras clave"
-description: "Descripción concisa explicando el propósito y valor de la página"
+description: "Descripción concisa que explica el propósito y valor de la página"
 ---
 ```
 
@@ -409,19 +409,19 @@ description: "Descripción concisa explicando el propósito y valor de la págin
 ### Requisitos de documentación de API
 
 - Documenta todos los parámetros, incluidos los opcionales, con descripciones claras
-- Muestra ejemplos de respuestas exitosas y de error con datos realistas
-- Incluye información sobre limitación de velocidad con límites específicos
-- Proporciona ejemplos de autenticación que muestren el formato correcto
+- Muestra ejemplos de respuestas tanto exitosas como de error con datos realistas
+- Incluye información de limitación de velocidad con límites específicos
+- Proporciona ejemplos de autenticación mostrando el formato adecuado
 - Explica todos los códigos de estado HTTP y el manejo de errores
 - Cubre ciclos completos de solicitud/respuesta
 
 ### Requisitos de accesibilidad
 
 - Incluye texto alternativo descriptivo para todas las imágenes y diagramas
-- Usa texto de enlace específico y procesable en lugar de "haz clic aquí"
+- Usa texto de enlace específico y accionable en lugar de "haz clic aquí"
 - Asegura una jerarquía de encabezados adecuada comenzando con H2
 - Proporciona consideraciones de navegación por teclado
-- Usa contraste de color suficiente en ejemplos y elementos visuales
+- Usa suficiente contraste de color en ejemplos y elementos visuales
 - Estructura el contenido para facilitar el escaneo con encabezados y listas
 
 ## Lógica de selección de componentes
