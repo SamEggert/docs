@@ -60,7 +60,8 @@
     "experimentalLocalizeStaticUrls": true,
     "docsHideDefaultLocaleImport": true,
     "experimentalHideDefaultLocale": true,
-    "experimentalAddHeaderAnchorIds": "mintlify"
+    "experimentalAddHeaderAnchorIds": "mintlify",
+    "experimentalClearLocaleFolders": true
   },
   "baseUrl": "https://325447a8729f.ngrok-free.app"
 }

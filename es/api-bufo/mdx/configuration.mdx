@@ -3,9 +3,9 @@ title: 'Configuración de MDX'
 description: 'Genera páginas de documentación para tus endpoints de API usando `MDX`'
 ---
 
-Puedes definir manualmente endpoints de API en archivos `MDX` individuales en lugar de usar una especificación OpenAPI. Este método ofrece flexibilidad para contenido personalizado, pero recomendamos generar la documentación de la API a partir de un archivo de especificación OpenAPI para la mayoría de los proyectos, ya que es más mantenible y completo. No obstante, crear páginas `MDX` para una API puede resultar útil para documentar APIs pequeñas o para prototipos.
+Puedes definir manualmente endpoints de API en archivos `MDX` individuales en lugar de usar una especificación OpenAPI. Este método ofrece flexibilidad para contenido personalizado, pero recomendamos generar la documentación de la API a partir de un archivo de especificación OpenAPI para la mayoría de los proyectos porque es más mantenible y ofrece más funcionalidades. No obstante, crear páginas `MDX` para una API puede ser útil para documentar APIs pequeñas o para prototipar.
 
-Para generar páginas para endpoints de API usando `MDX`, configura tu API en `docs.json`, crea archivos `MDX` individuales para cada endpoint y usa componentes como `<ParamFields />` para definir parámetros. A partir de estas definiciones, Mintlify genera API playgrounds interactivos, ejemplos de solicitud y ejemplos de respuesta.
+Para generar páginas para endpoints de API usando `MDX`, configura tu API en `docs.json`, crea archivos `MDX` individuales para cada endpoint y usa components como `<ParamFields />` para definir parámetros. A partir de estas definiciones, Mintlify genera API playgrounds interactivos, ejemplos de solicitud y ejemplos de respuesta.
 
 <Steps>
   <Step title="Configura tu API">
@@ -23,7 +23,7 @@ Para generar páginas para endpoints de API usando `MDX`, configura tu API en `d
     }
     ```
 
-    Si deseas ocultar el API playground, usa el campo `display`. No necesitas incluir un método de autenticación si ocultas el playground.
+    Si quieres ocultar el API playground, usa el campo `display`. No necesitas incluir un método de autenticación si ocultas el playground.
 
     ```json
     "api": {
@@ -33,10 +33,10 @@ Para generar páginas para endpoints de API usando `MDX`, configura tu API en `d
     }
     ```
 
-    Encuentra la lista completa de configuraciones de la API en [Settings](/es/organize/settings#api-configurations).
+    Encuentra la lista completa de configuraciones de API en [Settings](/es/organize/settings#api-configurations).
   </Step>
 
-  <Step title="Crea las páginas de tus endpoints">
+  <Step title="Crea tus páginas de endpoints">
     Cada página de endpoint de API debe tener un archivo `MDX` correspondiente. En la parte superior de cada archivo, define `title` y `api`:
 
     ```mdx
@@ -46,7 +46,7 @@ Para generar páginas para endpoints de API usando `MDX`, configura tu API en `d
     ---
     ```
 
-    Puedes especificar parámetros de ruta añadiendo el nombre del parámetro a la ruta, entre llaves `{}`:
+    Puedes especificar parámetros de ruta agregando el nombre del parámetro a la ruta, entre `{}`:
 
     ```bash
     https://api.example.com/v1/endpoint/{userId}
@@ -56,7 +56,7 @@ Para generar páginas para endpoints de API usando `MDX`, configura tu API en `d
       Si tienes un campo `server` configurado en `docs.json`, puedes usar rutas relativas como `/v1/endpoint`.
     </Note>
 
-    Puedes anular el modo de visualización definido globalmente para el API playground en una página añadiendo `playground` al frontmatter:
+    Puedes reemplazar el modo de visualización global del API playground para una página agregando `playground` al frontmatter:
 
     ```mdx
     ---
@@ -67,25 +67,25 @@ Para generar páginas para endpoints de API usando `MDX`, configura tu API en `d
     ```
 
     * `playground: 'interactive'` - Muestra el playground interactivo.
-    * `playground: 'simple'` - Muestra un endpoint copiable sin playground.
+    * `playground: 'simple'` - Muestra un endpoint que se puede copiar, sin playground.
     * `playground: 'none'` - Oculta el playground.
   </Step>
 
   <Step title="Agrega tus endpoints a tu documentación">
-    Agrega las páginas de tus endpoints a la barra lateral añadiendo las rutas al campo `navigation` en tu `docs.json`. Aprende más sobre cómo estructurar tu documentación en [Navigation](/es/organize/navigation).
+    Agrega tus páginas de endpoints a la barra lateral añadiendo las rutas al campo `navigation` en tu `docs.json`. Obtén más información sobre cómo estructurar tu documentación en [Navigation](/es/organize/navigation).
   </Step>
 </Steps>
 
 <div id="enabling-authentication">
-  ## Habilitar Autenticación
+  ## Habilitar la autenticación
 </div>
 
-Puedes agregar un método de Autenticación a tu `docs.json` para habilitarlo globalmente en cada página o configurarlo por página.
+Puedes añadir un método de autenticación en tu `docs.json` para habilitarlo globalmente en todas las páginas, o configurarlo por página.
 
-El método de Autenticación de una página anulará el método global si ambos están configurados.
+El método de autenticación de una página reemplazará el método global si ambos están definidos.
 
 <div id="bearer-token">
-  ### Token bearer
+  ### Token de portador
 </div>
 
 <CodeGroup>
@@ -101,7 +101,7 @@ El método de Autenticación de una página anulará el método global si ambos 
 
   ```mdx Page Metadata
   ---
-  title: "Título de tu página"
+  title: "Título de la página"
   authMethod: "bearer"
   ---
   ```
@@ -155,10 +155,10 @@ El método de Autenticación de una página anulará el método global si ambos 
 </CodeGroup>
 
 <div id="none">
-  ### Ninguno
+  ### None
 </div>
 
-El método de autenticación `none` es útil para desactivar la autenticación en un endpoint específico después de haber establecido un valor predeterminado en docs.json.
+El método de autenticación `none` es útil para desactivar la autenticación en un endpoint específico después de haber definido un valor predeterminado en docs.json.
 
 <CodeGroup>
   ```mdx Page Metadata

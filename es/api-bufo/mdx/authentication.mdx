@@ -7,12 +7,12 @@ description: "Puedes configurar parámetros de autenticación para que los usuar
   ## Habilitar la autenticación
 </div>
 
-Puedes agregar un método de autenticación a tu `docs.json` para habilitarlo globalmente en todas las páginas o configurarlo por página.
+Puedes agregar un método de autenticación a tu `docs.json` para habilitarlo globalmente en cada página o configurarlo por página.
 
-El método de autenticación de una página reemplazará al método global si ambos están definidos.
+El método de autenticación de una página reemplazará al método global si ambos están configurados.
 
 <div id="bearer-token">
-  ### Token portador
+  ### Token de portador
 </div>
 
 <CodeGroup>
@@ -91,7 +91,7 @@ authMethod: "key"
   ### None
 </div>
 
-El método de autenticación "none" es útil para desactivar la autenticación en un endpoint específico después de haber establecido un valor predeterminado en docs.json.
+El método de Authentication "none" es útil para desactivar la autenticación en un endpoint específico después de establecer un valor predeterminado en docs.json.
 
 <CodeGroup>
 ```mdx Page Metadata

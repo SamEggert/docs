@@ -3,29 +3,29 @@ title: "Tipos de datos complejos"
 description: "Describe APIs con esquemas flexibles, propiedades opcionales y múltiples formatos de datos usando las palabras clave `oneOf`, `anyOf` y `allOf`"
 ---
 
-Cuando tu API acepta múltiples formatos de datos, tiene campos condicionales o utiliza patrones de herencia, las palabras clave de composición de esquemas de OpenAPI te ayudan a documentar estas estructuras flexibles. Con `oneOf`, `anyOf` y `allOf`, puedes describir APIs que admiten diferentes tipos de entrada o combinan varios esquemas en modelos de datos integrales.
+Cuando tu API acepta varios formatos de datos, tiene campos condicionales o utiliza patrones de herencia, las palabras clave de composición de esquemas de OpenAPI te ayudan a documentar estas estructuras flexibles. Con `oneOf`, `anyOf` y `allOf`, puedes describir APIs que admiten distintos tipos de entrada o combinan varios esquemas en modelos de datos completos.
 
 <div id="oneof-anyof-allof-keywords">
-  ## `oneOf`, `anyOf`, `allOf` keywords
+  ## Palabras clave `oneOf`, `anyOf`, `allOf`
 </div>
 
-Para tipos de datos complejos, OpenAPI proporciona keywords para combinar esquemas:
+Para tipos de datos complejos, OpenAPI proporciona palabras clave para combinar esquemas:
 
 - `allOf`: Combina varios esquemas (como fusionar objetos o extender un esquema base). Funciona como un operador `and`. 
-- `anyOf`: Acepta datos que coincidan con cualquiera de los esquemas proporcionados. Funciona como un operador `or`.
-- `oneOf`: Acepta datos que coincidan con exactamente uno de los esquemas proporcionados. Funciona como un operador `exclusive-or`.
+- `anyOf`: Acepta datos que coinciden con cualquiera de los esquemas proporcionados. Funciona como un operador `or`.
+- `oneOf`: Acepta datos que coinciden exactamente con uno de los esquemas proporcionados. Funciona como un operador `exclusive-or`.
 
-<Warning>Mintlify trata `oneOf` y `anyOf` de manera idéntica, ya que la diferencia práctica rara vez afecta el uso de la API.</Warning>
+<Warning>Mintlify trata `oneOf` y `anyOf` de la misma manera, ya que la diferencia práctica rara vez afecta el uso de la API.</Warning>
 
-Para conocer las especificaciones detalladas de estos keywords, consulta la [documentación de OpenAPI](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/).
+Para obtener especificaciones detalladas de estas palabras clave, consulta la [documentación de OpenAPI](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/).
 
-<Info>El keyword `not` no es compatible actualmente.</Info>
+<Info>La palabra clave `not` actualmente no es compatible.</Info>
 
 <div id="combining-schemas-with-allof">
   ### Combinación de esquemas con `allOf`
 </div>
 
-Cuando usas `allOf`, Mintlify realiza un preprocesamiento de tu documento OpenAPI para mostrar combinaciones complejas de forma legible. Por ejemplo, cuando combinas dos esquemas de objeto con `allOf`, Mintlify fusiona las propiedades de ambos en un único objeto. Esto resulta especialmente útil al aprovechar los [components](https://swagger.io/docs/specification/components/) reutilizables de OpenAPI.
+Cuando usas `allOf`, Mintlify realiza cierto preprocesamiento de tu documento OpenAPI para mostrar combinaciones complejas de forma legible. Por ejemplo, al combinar dos esquemas de objeto con `allOf`, Mintlify une las propiedades de ambos en un único objeto. Esto es especialmente útil al aprovechar los [components](https://swagger.io/docs/specification/components/) reutilizables de OpenAPI.
 
 ```yaml
 org_with_users:
@@ -54,7 +54,7 @@ components:
     </ParamField>
 
     <ParamField body="users" type="object[]">
-      Un array que contiene a todos los usuarios de la organización
+      Una matriz que incluye a todos los usuarios de la organización
     </ParamField>
   </Expandable>
 </ParamField>
@@ -64,12 +64,12 @@ components:
   ### Proporcionar opciones con `oneOf` y `anyOf`
 </div>
 
-Cuando uses `oneOf` o `anyOf`, las opciones se mostrarán en un contenedor con pestañas. Especifica un campo `title` en cada subesquema para nombrar tus opciones. Por ejemplo, así podrías mostrar dos tipos distintos de direcciones de entrega:
+Cuando usas `oneOf` o `anyOf`, las opciones se muestran en un contenedor con pestañas. Especifica un campo `title` en cada subesquema para asignar nombres a las opciones. Por ejemplo, así podrías mostrar dos tipos distintos de direcciones de entrega:
 
 ```yaml
 delivery_address:
   oneOf:
-    - title: DireccionCalle
+    - title: DirecciónCalle
       type: object
       properties:
         address_line_1:
@@ -90,7 +90,7 @@ delivery_address:
     <Tabs>
       <Tab title="StreetAddress">
         <ParamField body="address_line_1" type="string">
-          La dirección de la residencia
+          La dirección de la vivienda
         </ParamField>
       </Tab>
 

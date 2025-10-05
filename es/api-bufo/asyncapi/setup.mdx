@@ -4,10 +4,10 @@ description: "Crea páginas de referencia de WebSocket con AsyncAPI"
 ---
 
 <div id="add-an-asyncapi-specification-file">
-  ## Agregar un archivo de especificación de AsyncAPI
+  ## Agrega un archivo de especificación de AsyncAPI
 </div>
 
-Para empezar a crear páginas para tus websockets, asegúrate de contar con un documento de esquema de AsyncAPI válido en formato JSON o YAML que cumpla con la [especificación de AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v3.0.0). Tu esquema debe ajustarse a la especificación AsyncAPI 3.0 o superior.
+Para empezar a crear páginas para tus WebSockets, asegúrate de tener un documento de esquema de AsyncAPI válido en formato JSON o YAML que cumpla con la [especificación de AsyncAPI](https://www.asyncapi.com/docs/reference/specification/v3.0.0). Tu esquema debe ajustarse a AsyncAPI 3.0 o superior.
 
 <Tip>
   Para verificar que tu esquema de AsyncAPI sea válido, puedes pegarlo en
@@ -15,10 +15,10 @@ Para empezar a crear páginas para tus websockets, asegúrate de contar con un d
 </Tip>
 
 <div id="auto-populate-websockets-pages">
-  ## Autogenerar páginas de websockets
+  ## Autocompletar páginas de websockets
 </div>
 
-Puedes agregar un campo `asyncapi` a cualquier pestaña o grupo en la Navegación de tu `docs.json`. Este campo puede contener la ruta a un documento de esquema AsyncAPI en tu repositorio de documentación, la URL de un documento de esquema AsyncAPI hospedado o un arreglo de enlaces a documentos de esquema AsyncAPI. Mintlify generará automáticamente una página por cada canal de websocket de AsyncAPI.
+Puedes agregar un campo `asyncapi` a cualquier pestaña o grupo en la Navegación de tu `docs.json`. Este campo puede contener la ruta a un documento de esquema de AsyncAPI en tu repositorio de documentación, la URL de un documento de esquema de AsyncAPI alojado o una matriz de enlaces a documentos de esquema de AsyncAPI. Mintlify generará automáticamente una página para cada canal de websocket de AsyncAPI.
 
 **Ejemplos con Tabs:**
 
@@ -69,16 +69,16 @@ Puedes agregar un campo `asyncapi` a cualquier pestaña o grupo en la Navegació
 ```
 
 <Note>
-  El campo directory es opcional. Si no se especifica, los archivos se colocarán en
-  la carpeta **api-reference** del repositorio de docs.
+  El campo directory es opcional. Si no se especifica, los archivos se ubicarán en
+  la carpeta **api-reference** del repositorio de documentación.
 </Note>
 
 
 <div id="channel-page">
-  ## Página de canal
+  ## Página del canal
 </div>
 
-Si quieres tener más control sobre el orden de tus canales o simplemente hacer referencia a un solo canal, puedes crear un archivo MDX con el campo `asyncapi` en el frontmatter.
+Si quieres más control sobre cómo ordenas tus canales o si solo necesitas referirte a un canal específico, puedes crear un archivo MDX con el campo `asyncapi` en el frontmatter.
 
 ```mdx
 ---
